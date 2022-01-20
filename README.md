@@ -17,11 +17,11 @@ The included examples show how to:
 - find Applications
   - by BundleID *(the preferred way)*
   - by AppName *(this will try to find it in all possible system defined application directories)*
-- get an Array of standard/default Folders defined by Apple *(see the Enumeration: ```NSSearchPathDirectory```)*.
+- get an Array of standard/default Folders defined by Apple *(see the Enumeration:* [```NSSearchPathDirectory```](https://developer.apple.com/documentation/foundation/nssearchpathdirectory?language=objc)*)*.
   - This way you will get all ones *(also the per-user Application Folder, if it exists)* from the OS.
 - get an answer to the following questions:
   - Which available application(s) can open a Document?  
-    An example is included which will ask you to select a Document. It then locates all suitable Applications, depending on the ```LSRolesMask```(s) you specify.
+    An example is included which will ask you to select a Document. It then locates all suitable Applications, depending on the [```LSRolesMask```](https://developer.apple.com/documentation/coreservices/lsrolesmask?language=objc)(s) you specify.
 - Which available application(s) can deal with a given URL?
   - Another example locates Applications that can deal with any given URL *(e.g. list all WebBrowsers)*.
 
