@@ -38,7 +38,7 @@ The Desktop application Xojo example project ```macOS-App-Directories.xojo_proje
 - API 1
 
 ### How to use in your own Xojo project?
-1. Copy the Module ```modMacOSAppsDirectories``` from the example project, and paste it into your project.
+1. Copy the Module ```modMacOSAppDirectories``` from the example project, and paste it into your project.
 2. Study the example project to learn how to use the provided methods in the Module.
 
 ## About

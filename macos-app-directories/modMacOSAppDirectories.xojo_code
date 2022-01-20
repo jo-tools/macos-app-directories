@@ -1,5 +1,5 @@
 #tag Module
-Protected Module modMacOSAppsDirectories
+Protected Module modMacOSAppDirectories
 	#tag Method, Flags = &h0
 		Function FindAppByBundleID(psBundleID As String) As FolderItem()
 		  Dim oResults() As FolderItem
