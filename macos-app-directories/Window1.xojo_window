@@ -26,49 +26,6 @@ Begin Window Window1
    Title           =   "macOS - App Directories"
    Visible         =   True
    Width           =   620
-   Begin TextField edtBundleID
-      AcceptTabs      =   False
-      Alignment       =   0
-      AutoDeactivate  =   True
-      AutomaticallyCheckSpelling=   False
-      BackColor       =   &cFFFFFF00
-      Bold            =   False
-      Border          =   True
-      CueText         =   "BundleID (e.g.: com.apple.terminal)"
-      DataField       =   ""
-      DataSource      =   ""
-      Enabled         =   True
-      Format          =   ""
-      Height          =   22
-      HelpTag         =   ""
-      Index           =   -2147483648
-      Italic          =   False
-      Left            =   112
-      LimitText       =   0
-      LockBottom      =   False
-      LockedInPosition=   True
-      LockLeft        =   True
-      LockRight       =   True
-      LockTop         =   True
-      Mask            =   ""
-      Password        =   False
-      ReadOnly        =   False
-      Scope           =   2
-      TabIndex        =   8
-      TabPanelIndex   =   0
-      TabStop         =   True
-      Text            =   "com.apple.terminal"
-      TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
-      Top             =   120
-      Transparent     =   False
-      Underline       =   False
-      UseFocusRing    =   True
-      Visible         =   True
-      Width           =   396
-   End
    Begin Label labBundleID
       AutoDeactivate  =   True
       Bold            =   False
@@ -979,6 +936,39 @@ Begin Window Window1
       Visible         =   True
       Width           =   620
    End
+   Begin ComboBox edtBundleID
+      AutoComplete    =   False
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialValue    =   "com.apple.terminal"
+      Italic          =   False
+      Left            =   112
+      ListIndex       =   0
+      LockBottom      =   False
+      LockedInPosition=   True
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   2
+      TabIndex        =   8
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   120
+      Transparent     =   False
+      Underline       =   False
+      UseFocusRing    =   True
+      Visible         =   True
+      Width           =   396
+   End
 End
 #tag EndWindow
 
@@ -1006,6 +996,7 @@ End
 		    lstResults.RowTag(lstResults.LastIndex) = poItems(i)
 		  Next
 		  
+		  lstResults.SetFocus
 		End Sub
 	#tag EndMethod
 
@@ -1414,6 +1405,20 @@ End
 		Function MouseDown(X As Integer, Y As Integer) As Boolean
 		  return true
 		End Function
+	#tag EndEvent
+#tag EndEvents
+#tag Events edtBundleID
+	#tag Event
+		Sub Open()
+		  me.DeleteAllRows
+		  
+		  me.AddRow "com.apple.terminal"
+		  me.AddRow "com.apple.mail"
+		  me.AddRow "com.apple.dt.Xcode"
+		  me.AddRow "com.xojo.xojo"
+		  
+		  me.Text = "com.apple.terminal"
+		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag ViewBehavior
