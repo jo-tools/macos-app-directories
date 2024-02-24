@@ -2,7 +2,7 @@
 Protected Module modMacOSAppDirectories
 	#tag Method, Flags = &h0
 		Function FindAppByBundleID(psBundleID As String) As FolderItem()
-		  Dim oResults() As FolderItem
+		  Var oResults() As FolderItem
 		  If (psBundleID = "") Then Return oResults
 		  
 		  #If TargetMacOS Then
@@ -18,24 +18,24 @@ Protected Module modMacOSAppDirectories
 		    Const kCFURLPOSIXPathStyle = 0
 		    Const kCFURLHFSPathStyle = 1
 		    
-		    Dim ptrToArray As Ptr = LSCopyApplicationURLsForBundleIdentifier(psBundleID, Nil)
+		    Var ptrToArray As Ptr = LSCopyApplicationURLsForBundleIdentifier(psBundleID, Nil)
 		    If (ptrToArray = Nil) Then Return oResults
 		    
-		    Dim iResultCount As UInteger = NSArrayCount(ptrToArray)
+		    Var iResultCount As UInteger = NSArrayCount(ptrToArray)
 		    If (iResultCount < 1) Then
 		      CFRelease(ptrToArray)
 		      Return oResults
 		    End If
 		    
 		    For i As Integer = 0 To iResultCount - 1
-		      Dim ptrToNSURL As Ptr = NSArrayObjectAtIndex(ptrToArray, i)
+		      Var ptrToNSURL As Ptr = NSArrayObjectAtIndex(ptrToArray, i)
 		      If (ptrToNSURL = Nil) Then Continue
 		      
-		      Dim sNativePath As String = CFURLCopyFileSystemPath(ptrToNSURL, kCFURLPOSIXPathStyle)
+		      Var sNativePath As String = CFURLCopyFileSystemPath(ptrToNSURL, kCFURLPOSIXPathStyle)
 		      
 		      Try
-		        Dim oResult As New FolderItem(sNativePath, FolderItem.PathTypeNative)
-		        oResults.Append(oResult)
+		        Var oResult As New FolderItem(sNativePath, FolderItem.PathModes.Native)
+		        oResults.Add(oResult)
 		      Catch UnsupportedFormatException
 		        'ignore
 		      End Try
@@ -51,18 +51,18 @@ Protected Module modMacOSAppDirectories
 
 	#tag Method, Flags = &h0
 		Function FindAppByName(psAppName As String) As FolderItem()
-		  Dim oResults() As FolderItem
+		  Var oResults() As FolderItem
 		  If (psAppName = "") Then Return oResults
 		  
 		  #If TargetMacOS Then
-		    Dim oDirectories() As FolderItem = GetApplicationsDirectories(NSSearchPathDirectory.NSAllApplicationsDirectory, NSSearchPathDomainMask.NSAllDomainsMask)
+		    Var oDirectories() As FolderItem = GetApplicationsDirectories(NSSearchPathDirectory.NSAllApplicationsDirectory, NSSearchPathDomainMask.NSAllDomainsMask)
 		    If (oDirectories = Nil) Then Return oResults
 		    
-		    Dim oApp As FolderItem
+		    Var oApp As FolderItem
 		    For Each oDirectory As FolderItem In oDirectories
 		      oApp = oDirectory.Child(psAppName)
 		      Try
-		        If (oApp <> Nil) And oApp.Exists And oApp.Directory Then oResults.Append(oApp)
+		        If (oApp <> Nil) And oApp.Exists And oApp.IsFolder Then oResults.Add(oApp)
 		      Catch UnsupportedFormatException
 		        'ignore
 		      End Try
@@ -76,7 +76,7 @@ Protected Module modMacOSAppDirectories
 
 	#tag Method, Flags = &h0
 		Function GetApplicationsDirectories(searchPathDirectory As NSSearchPathDirectory, searchPathDomainMask As NSSearchPathDomainMask) As FolderItem()
-		  Dim oResults() As FolderItem
+		  Var oResults() As FolderItem
 		  
 		  #If TargetMacOS Then
 		    //https://developer.apple.com/documentation/foundation/nsfilemanager/1407726-urlsfordirectory?language=objc
@@ -88,10 +88,10 @@ Protected Module modMacOSAppDirectories
 		    Declare Function path Lib "Foundation" Selector "path" (ptrNSURLInstance As Ptr) As CFStringRef
 		    Declare Function fileExistsAtPathAndIsDirectory Lib "Foundation" Selector "fileExistsAtPath:isDirectory:" (ptrNSFileManagerInstance As Ptr, path As CFStringRef, ByRef isDirectory As Boolean) As Boolean
 		    
-		    Dim ptrNSFileManagerClass As Ptr = NSClassFromString("NSFileManager")
+		    Var ptrNSFileManagerClass As Ptr = NSClassFromString("NSFileManager")
 		    If (ptrNSFileManagerClass = Nil) Then Return oResults
 		    
-		    Dim ptrToNSFileManagerDefaultInstance As Ptr = defaultManager(ptrNSFileManagerClass)
+		    Var ptrToNSFileManagerDefaultInstance As Ptr = defaultManager(ptrNSFileManagerClass)
 		    If (ptrToNSFileManagerDefaultInstance = Nil) Then Return oResults
 		    
 		    Declare Function URLsForDirectory Lib "Foundation" Selector "URLsForDirectory:inDomains:" (ptrToNSFileManagerInstance As Ptr, NSSearchPathDirectory As UInteger, NSSearchPathDomainMask As UInteger) As Ptr
@@ -104,24 +104,24 @@ Protected Module modMacOSAppDirectories
 		    Const kCFURLPOSIXPathStyle = 0
 		    Const kCFURLHFSPathStyle = 1
 		    
-		    Dim ptrToArray As Ptr = URLsForDirectory(ptrToNSFileManagerDefaultInstance, CType(searchPathDirectory, UInteger), CType(searchPathDomainMask, UInteger))
+		    Var ptrToArray As Ptr = URLsForDirectory(ptrToNSFileManagerDefaultInstance, CType(searchPathDirectory, UInteger), CType(searchPathDomainMask, UInteger))
 		    If (ptrToArray = Nil) Then Return oResults
 		    
-		    Dim iResultCount As UInteger = NSArrayCount(ptrToArray)
+		    Var iResultCount As UInteger = NSArrayCount(ptrToArray)
 		    If (iResultCount < 1) Then Return oResults
 		    
 		    For i As Integer = 0 To iResultCount - 1
-		      Dim ptrToNSURL As Ptr = NSArrayObjectAtIndex(ptrToArray, i)
+		      Var ptrToNSURL As Ptr = NSArrayObjectAtIndex(ptrToArray, i)
 		      If (ptrToNSURL = Nil) Then Continue
 		      
-		      Dim bIsDirectory As Boolean = False
+		      Var bIsDirectory As Boolean = False
 		      If (Not fileExistsAtPathAndIsDirectory(ptrToNSFileManagerDefaultInstance, path(ptrToNSURL), bIsDirectory)) Or (Not bIsDirectory) Then Continue
 		      
-		      Dim sNativePath As String = CFURLCopyFileSystemPath(ptrToNSURL, kCFURLPOSIXPathStyle)
+		      Var sNativePath As String = CFURLCopyFileSystemPath(ptrToNSURL, kCFURLPOSIXPathStyle)
 		      
 		      Try
-		        Dim oResult As New FolderItem(sNativePath, FolderItem.PathTypeNative)
-		        oResults.Append(oResult)
+		        Var oResult As New FolderItem(sNativePath, FolderItem.PathModes.Native)
+		        oResults.Add(oResult)
 		      Catch UnsupportedFormatException
 		        'ignore
 		      End Try
@@ -143,7 +143,7 @@ Protected Module modMacOSAppDirectories
 
 	#tag Method, Flags = &h0
 		Function GetApplicationsForFile(poFileURL As FolderItem, rolesMask As UInteger) As FolderItem()
-		  Dim oResults() As FolderItem
+		  Var oResults() As FolderItem
 		  
 		  #If TargetMacOS Then
 		    //https://developer.apple.com/documentation/coreservices/1445148-lscopyapplicationurlsforurl?language=objc
@@ -153,10 +153,10 @@ Protected Module modMacOSAppDirectories
 		    Declare Function NSClassFromString Lib "Foundation" (className As CFStringRef) As Ptr
 		    Declare Function fileURLWithPath Lib "Foundation" Selector "fileURLWithPath:" (ptrNSURLClass As Ptr, path As CFStringRef) As Ptr
 		    
-		    Dim ptrNSURLClass As Ptr = NSClassFromString("NSURL")
+		    Var ptrNSURLClass As Ptr = NSClassFromString("NSURL")
 		    If (ptrNSURLClass = Nil) Then Return oResults
 		    
-		    Dim ptrFileURL As Ptr = fileURLWithPath(ptrNSURLClass, poFileURL.NativePath)
+		    Var ptrFileURL As Ptr = fileURLWithPath(ptrNSURLClass, poFileURL.NativePath)
 		    If (ptrFileURL = Nil) Then Return oResults
 		    
 		    oResults = GetApplicationURLsForURL(ptrFileURL, rolesMask)
@@ -175,7 +175,7 @@ Protected Module modMacOSAppDirectories
 
 	#tag Method, Flags = &h0
 		Function GetApplicationsForURL(psURL As String, rolesMask As UInteger) As FolderItem()
-		  Dim oResults() As FolderItem
+		  Var oResults() As FolderItem
 		  
 		  #If TargetMacOS Then
 		    //https://developer.apple.com/documentation/coreservices/1445148-lscopyapplicationurlsforurl?language=objc
@@ -185,10 +185,10 @@ Protected Module modMacOSAppDirectories
 		    Declare Function NSClassFromString Lib "Foundation" (className As CFStringRef) As Ptr
 		    Declare Function URLWithString Lib "Foundation" Selector "URLWithString:" (ptrNSURLClass As Ptr, url As CFStringRef) As Ptr
 		    
-		    Dim ptrNSURLClass As Ptr = NSClassFromString("NSURL")
+		    Var ptrNSURLClass As Ptr = NSClassFromString("NSURL")
 		    If (ptrNSURLClass = Nil) Then Return oResults
 		    
-		    Dim ptrToANSURLInstance As Ptr = URLWithString(ptrNSURLClass, psURL)
+		    Var ptrToANSURLInstance As Ptr = URLWithString(ptrNSURLClass, psURL)
 		    If (ptrToANSURLInstance = Nil) Then Return oResults
 		    
 		    oResults = GetApplicationURLsForURL(ptrToANSURLInstance, rolesMask)
@@ -201,7 +201,7 @@ Protected Module modMacOSAppDirectories
 
 	#tag Method, Flags = &h21
 		Private Function GetApplicationURLsForURL(ptrToANSURLInstance As Ptr, rolesMask As UInteger) As FolderItem()
-		  Dim oResults() As FolderItem
+		  Var oResults() As FolderItem
 		  
 		  #If TargetMacOS Then
 		    //https://developer.apple.com/documentation/coreservices/1445148-lscopyapplicationurlsforurl?language=objc
@@ -222,24 +222,24 @@ Protected Module modMacOSAppDirectories
 		    Const kCFURLHFSPathStyle = 1
 		    
 		    
-		    Dim ptrToArray As Ptr = LSCopyApplicationURLsForURL(ptrToANSURLInstance, rolesMask)
+		    Var ptrToArray As Ptr = LSCopyApplicationURLsForURL(ptrToANSURLInstance, rolesMask)
 		    If (ptrToArray = Nil) Then Return oResults
 		    
-		    Dim iResultCount As UInteger = NSArrayCount(ptrToArray)
+		    Var iResultCount As UInteger = NSArrayCount(ptrToArray)
 		    If (iResultCount < 1) Then
 		      CFRelease(ptrToArray)
 		      Return oResults
 		    End If
 		    
 		    For i As Integer = 0 To iResultCount - 1
-		      Dim ptrToNSURL As Ptr = NSArrayObjectAtIndex(ptrToArray, i)
+		      Var ptrToNSURL As Ptr = NSArrayObjectAtIndex(ptrToArray, i)
 		      If (ptrToNSURL = Nil) Then Continue
 		      
-		      Dim sNativePath As String = CFURLCopyFileSystemPath(ptrToNSURL, kCFURLPOSIXPathStyle)
+		      Var sNativePath As String = CFURLCopyFileSystemPath(ptrToNSURL, kCFURLPOSIXPathStyle)
 		      
 		      Try
-		        Dim oResult As New FolderItem(sNativePath, FolderItem.PathTypeNative)
-		        oResults.Append(oResult)
+		        Var oResult As New FolderItem(sNativePath, FolderItem.PathModes.Native)
+		        oResults.Add(oResult)
 		      Catch UnsupportedFormatException
 		        'ignore
 		      End Try

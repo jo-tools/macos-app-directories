@@ -981,13 +981,13 @@ End
 		Private Sub AddResults(poItems() As FolderItem)
 		  lstResults.RemoveAllRows
 		  
-		  If (poItems = Nil) Or (poItems.Ubound < 0) Then
+		  If (poItems = Nil) Or (poItems.LastIndex < 0) Then
 		    lstResults.AddRow(constNoResults)
 		    lstResults.RowTagAt(lstResults.LastAddedRowIndex) = Nil
 		    Return
 		  End If
 		  
-		  For i As Integer = 0 To poItems.Ubound
+		  For i As Integer = 0 To poItems.LastIndex
 		    lstResults.AddRow(poItems(i).NativePath)
 		    lstResults.RowTagAt(lstResults.LastAddedRowIndex) = poItems(i)
 		  Next
@@ -1014,12 +1014,12 @@ End
 		  lstResults.RemoveAllRows
 		  
 		  #If TargetMacOS Then
-		    Dim oResults() As FolderItem = FindAppByBundleID(edtBundleID.Text)
+		    Var oResults() As FolderItem = FindAppByBundleID(edtBundleID.Text)
 		    
 		    Self.AddResults(oResults)
 		    
 		  #Else
-		    MsgBox "This example is for macOS only"
+		    MessageBox "This example is for macOS only"
 		  #EndIf
 		End Sub
 	#tag EndEvent
@@ -1027,10 +1027,10 @@ End
 #tag Events lstResults
 	#tag Event
 		Sub DoublePressed()
-		  Dim oFolderItem As FolderItem = Me.RowTagAt(Me.SelectedRowIndex)
+		  Var oFolderItem As FolderItem = Me.RowTagAt(Me.SelectedRowIndex)
 		  If (oFolderItem = Nil) Or (Not oFolderItem.Exists) Then Return
 		  
-		  oFolderItem.Launch
+		  oFolderItem.Open
 		  
 		End Sub
 	#tag EndEvent
@@ -1041,7 +1041,7 @@ End
 		  lstResults.RemoveAllRows
 		  
 		  #If TargetMacOS Then
-		    Dim oResults() As FolderItem = GetApplicationsDirectories( _
+		    Var oResults() As FolderItem = GetApplicationsDirectories( _
 		    CType(lstSearchPath.RowTagAt(lstSearchPath.SelectedRowIndex), NSSearchPathDirectory), _
 		    CType(lstSearchPathDomain.RowTagAt(lstSearchPathDomain.SelectedRowIndex), NSSearchPathDomainMask) _
 		    )
@@ -1049,7 +1049,7 @@ End
 		    Self.AddResults(oResults)
 		    
 		  #Else
-		    MsgBox "This example is for macOS only"
+		    MessageBox "This example is for macOS only"
 		  #EndIf
 		End Sub
 	#tag EndEvent
@@ -1060,12 +1060,12 @@ End
 		  lstResults.RemoveAllRows
 		  
 		  #If TargetMacOS Then
-		    Dim oResults() As FolderItem = FindAppByName(edtAppName.Text)
+		    Var oResults() As FolderItem = FindAppByName(edtAppName.Text)
 		    
 		    Self.AddResults(oResults)
 		    
 		  #Else
-		    MsgBox "This example is for macOS only"
+		    MessageBox "This example is for macOS only"
 		  #EndIf
 		End Sub
 	#tag EndEvent
@@ -1098,7 +1098,7 @@ End
 		Sub Opening()
 		  Me.RemoveAllRows
 		  
-		  Dim iSel As Integer = 0
+		  Var iSel As Integer = 0
 		  
 		  Me.AddRow("NSApplicationDirectory")
 		  Me.RowTagAt(Me.RowCount-1) = NSSearchPathDirectory.NSApplicationDirectory
@@ -1199,21 +1199,21 @@ End
 		  
 		  #If TargetMacOS Then
 		    
-		    Dim dlg As New OpenDialog
-		    dlg.InitialDirectory = SpecialFolder.Desktop
+		    Var dlg As New OpenFileDialog
+		    dlg.InitialFolder = SpecialFolder.Desktop
 		    dlg.Title = "Select a Document"
 		    dlg.Filter = "????"
-		    Dim f As FolderItem = dlg.ShowModal
+		    Var f As FolderItem = dlg.ShowModal
 		    If (f = Nil) Or (Not f.Exists) Then Return
 		    
 		    edtURL.Text = f.URLPath
-		    Dim oResults() As FolderItem = GetApplicationsForFile(f, CType(lstRolesMask.RowTagAt(lstRolesMask.SelectedRowIndex), UInteger))
+		    Var oResults() As FolderItem = GetApplicationsForFile(f, CType(lstRolesMask.RowTagAt(lstRolesMask.SelectedRowIndex), UInteger))
 		    
 		    Self.AddResults(oResults)
 		    
 		    
 		  #Else
-		    MsgBox "This example is for macOS only"
+		    MessageBox "This example is for macOS only"
 		  #EndIf
 		End Sub
 	#tag EndEvent
@@ -1256,13 +1256,13 @@ End
 		  
 		  #If TargetMacOS Then
 		    
-		    Dim oResults() As FolderItem = GetApplicationsForURL(Trim(edtURL.Text), CType(lstRolesMask.RowTagAt(lstRolesMask.SelectedRowIndex), UInteger))
+		    Var oResults() As FolderItem = GetApplicationsForURL(edtURL.Text.Trim, CType(lstRolesMask.RowTagAt(lstRolesMask.SelectedRowIndex), UInteger))
 		    
 		    Self.AddResults(oResults)
 		    
 		    
 		  #Else
-		    MsgBox "This example is for macOS only"
+		    MessageBox "This example is for macOS only"
 		  #EndIf
 		End Sub
 	#tag EndEvent
@@ -1278,7 +1278,7 @@ End
 	#tag Event
 		Sub MouseUp(x As Integer, y As Integer)
 		  If (x >= 0) And (x < Me.Width) And (y > 0) And (y < Me.Height) Then
-		    ShowURL("https://www.jo-tools.ch/xojo/app-directories/")
+		    System.GotoURL("https://www.jo-tools.ch/xojo/app-directories/")
 		  End If
 		End Sub
 	#tag EndEvent
@@ -1313,7 +1313,7 @@ End
 	#tag Event
 		Sub MouseUp(x As Integer, y As Integer)
 		  If (x >= 0) And (x < Me.Width) And (y > 0) And (y < Me.Height) Then
-		    ShowURL("https://www.jo-tools.ch/xojo/app-directories/")
+		    System.GotoURL("https://www.jo-tools.ch/xojo/app-directories/")
 		  End If
 		End Sub
 	#tag EndEvent
@@ -1372,7 +1372,7 @@ End
 	#tag Event
 		Sub MouseUp(x As Integer, y As Integer)
 		  If (x >= 0) And (x < Me.Width) And (y > 0) And (y < Me.Height) Then
-		    ShowURL("mailto:xojo@jo-tools.ch")
+		    System.GotoURL("mailto:xojo@jo-tools.ch")
 		  End If
 		End Sub
 	#tag EndEvent
@@ -1382,11 +1382,11 @@ End
 		Sub Paint(g As Graphics, areas() As Rect)
 		  #Pragma unused areas
 		  
-		  g.ForeColor = &cFFFFFF
-		  If IsDarkMode Then g.ForeColor = &cD0D0D0
-		  g.FillRect(0, 0, g.Width, g.Height)
-		  g.ForeColor = &c909090
-		  g.DrawRect(0, 0, g.Width, g.Height)
+		  g.DrawingColor = &cFFFFFF
+		  If Color.IsDarkMode Then g.DrawingColor = &cD0D0D0
+		  g.FillRectangle(0, 0, g.Width, g.Height)
+		  g.DrawingColor = &c909090
+		  g.DrawRectangle(0, 0, g.Width, g.Height)
 		  g.DrawPicture(PayPal, 3, 2, 100, 26, 0, 0, PayPal.Width, PayPal.Height)
 		End Sub
 	#tag EndEvent
@@ -1404,7 +1404,7 @@ End
 	#tag Event
 		Sub MouseUp(x As Integer, y As Integer)
 		  If (x >= 0) And (x < Me.Width) And (y > 0) And (y < Me.Height) Then
-		    ShowURL("https://paypal.me/jotools")
+		    System.GotoURL("https://paypal.me/jotools")
 		  End If
 		End Sub
 	#tag EndEvent
