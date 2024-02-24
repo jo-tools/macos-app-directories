@@ -11,8 +11,8 @@ Protected Module modMacOSAppDirectories
 		    
 		    Declare Function LSCopyApplicationURLsForBundleIdentifier Lib "Foundation" (inBundleIdentifier As CFStringRef, outError As Ptr) As Ptr
 		    Declare Sub CFRelease Lib "Foundation" (CFTypeRef As Ptr)
-		    Declare Function NSArrayCount Lib "Foundation" selector "count" (ptrToNSArray As Ptr) As UInteger
-		    Declare Function NSArrayObjectAtIndex Lib "Foundation" selector "objectAtIndex:" (ptrToNSArray As Ptr, index As UInteger) As Ptr
+		    Declare Function NSArrayCount Lib "Foundation" Selector "count" (ptrToNSArray As Ptr) As UInteger
+		    Declare Function NSArrayObjectAtIndex Lib "Foundation" Selector "objectAtIndex:" (ptrToNSArray As Ptr, index As UInteger) As Ptr
 		    Declare Function CFURLCopyFileSystemPath Lib "Foundation" (anURL As Ptr, pathStyle As Int32) As CFStringRef
 		    
 		    Const kCFURLPOSIXPathStyle = 0
@@ -84,9 +84,9 @@ Protected Module modMacOSAppDirectories
 		    //https://developer.apple.com/documentation/foundation/nssearchpathdomainmask?language=objc
 		    
 		    Declare Function NSClassFromString Lib "Foundation" (className As CFStringRef) As Ptr
-		    Declare Function defaultManager Lib "Foundation" selector "defaultManager" (ptrNSFileManagerClass As Ptr) As Ptr
-		    Declare Function path Lib "Foundation" selector "path" (ptrNSURLInstance As Ptr) As CFStringRef
-		    Declare Function fileExistsAtPathAndIsDirectory Lib "Foundation" selector "fileExistsAtPath:isDirectory:" (ptrNSFileManagerInstance As Ptr, path As CFStringRef, ByRef isDirectory As Boolean) As Boolean
+		    Declare Function defaultManager Lib "Foundation" Selector "defaultManager" (ptrNSFileManagerClass As Ptr) As Ptr
+		    Declare Function path Lib "Foundation" Selector "path" (ptrNSURLInstance As Ptr) As CFStringRef
+		    Declare Function fileExistsAtPathAndIsDirectory Lib "Foundation" Selector "fileExistsAtPath:isDirectory:" (ptrNSFileManagerInstance As Ptr, path As CFStringRef, ByRef isDirectory As Boolean) As Boolean
 		    
 		    Dim ptrNSFileManagerClass As Ptr = NSClassFromString("NSFileManager")
 		    If (ptrNSFileManagerClass = Nil) Then Return oResults
@@ -94,11 +94,11 @@ Protected Module modMacOSAppDirectories
 		    Dim ptrToNSFileManagerDefaultInstance As Ptr = defaultManager(ptrNSFileManagerClass)
 		    If (ptrToNSFileManagerDefaultInstance = Nil) Then Return oResults
 		    
-		    Declare Function URLsForDirectory Lib "Foundation" selector "URLsForDirectory:inDomains:" (ptrToNSFileManagerInstance As Ptr, NSSearchPathDirectory As UInteger, NSSearchPathDomainMask As UInteger) As Ptr
+		    Declare Function URLsForDirectory Lib "Foundation" Selector "URLsForDirectory:inDomains:" (ptrToNSFileManagerInstance As Ptr, NSSearchPathDirectory As UInteger, NSSearchPathDomainMask As UInteger) As Ptr
 		    
-		    Declare Function NSArrayCount Lib "Foundation" selector "count" (ptrToNSArray As Ptr) As UInteger
-		    Declare Function NSArrayObjectAtIndex Lib "Foundation" selector "objectAtIndex:" (ptrToNSArray As Ptr, index As UInteger) As Ptr
-		    Declare Function NSArrayObjectAtIndex_IsA_CFStringRef Lib "Foundation" selector "objectAtIndex:" (ptrToNSArray As Ptr, index As UInteger) As CFStringRef
+		    Declare Function NSArrayCount Lib "Foundation" Selector "count" (ptrToNSArray As Ptr) As UInteger
+		    Declare Function NSArrayObjectAtIndex Lib "Foundation" Selector "objectAtIndex:" (ptrToNSArray As Ptr, index As UInteger) As Ptr
+		    Declare Function NSArrayObjectAtIndex_IsA_CFStringRef Lib "Foundation" Selector "objectAtIndex:" (ptrToNSArray As Ptr, index As UInteger) As CFStringRef
 		    Declare Function CFURLCopyFileSystemPath Lib "Foundation" (anURL As Ptr, pathStyle As Int32) As CFStringRef
 		    
 		    Const kCFURLPOSIXPathStyle = 0
@@ -137,7 +137,7 @@ Protected Module modMacOSAppDirectories
 
 	#tag Method, Flags = &h0
 		Function GetApplicationsForFile(poFileURL As FolderItem, roleMask As LSRolesMask) As FolderItem()
-		  return GetApplicationsForFile(poFileURL, CType(roleMask, UInteger))
+		  Return GetApplicationsForFile(poFileURL, CType(roleMask, UInteger))
 		End Function
 	#tag EndMethod
 
@@ -151,7 +151,7 @@ Protected Module modMacOSAppDirectories
 		    If (poFileURL = Nil) Or (Not poFileURL.Exists) Then Return oResults
 		    
 		    Declare Function NSClassFromString Lib "Foundation" (className As CFStringRef) As Ptr
-		    Declare Function fileURLWithPath Lib "Foundation" selector "fileURLWithPath:" (ptrNSURLClass As Ptr, path As CFStringRef) As Ptr
+		    Declare Function fileURLWithPath Lib "Foundation" Selector "fileURLWithPath:" (ptrNSURLClass As Ptr, path As CFStringRef) As Ptr
 		    
 		    Dim ptrNSURLClass As Ptr = NSClassFromString("NSURL")
 		    If (ptrNSURLClass = Nil) Then Return oResults
@@ -169,7 +169,7 @@ Protected Module modMacOSAppDirectories
 
 	#tag Method, Flags = &h0
 		Function GetApplicationsForURL(psURL As String, roleMask As LSRolesMask) As FolderItem()
-		  return GetApplicationsForURL(psURL, CType(roleMask, UInteger))
+		  Return GetApplicationsForURL(psURL, CType(roleMask, UInteger))
 		End Function
 	#tag EndMethod
 
@@ -183,7 +183,7 @@ Protected Module modMacOSAppDirectories
 		    If (psURL = "") Then Return oResults
 		    
 		    Declare Function NSClassFromString Lib "Foundation" (className As CFStringRef) As Ptr
-		    Declare Function URLWithString Lib "Foundation" selector "URLWithString:" (ptrNSURLClass As Ptr, url As CFStringRef) As Ptr
+		    Declare Function URLWithString Lib "Foundation" Selector "URLWithString:" (ptrNSURLClass As Ptr, url As CFStringRef) As Ptr
 		    
 		    Dim ptrNSURLClass As Ptr = NSClassFromString("NSURL")
 		    If (ptrNSURLClass = Nil) Then Return oResults
@@ -209,13 +209,13 @@ Protected Module modMacOSAppDirectories
 		    If (ptrToANSURLInstance = Nil) Then Return oResults
 		    
 		    Declare Function NSClassFromString Lib "Foundation" (className As CFStringRef) As Ptr
-		    Declare Function URLWithString Lib "Foundation" selector "URLWithString:" (ptrNSURLClass As Ptr, url As CFStringRef) As Ptr
+		    Declare Function URLWithString Lib "Foundation" Selector "URLWithString:" (ptrNSURLClass As Ptr, url As CFStringRef) As Ptr
 		    
 		    Declare Function LSCopyApplicationURLsForURL Lib "Foundation" (anURL As Ptr, LSRolesMask As UInteger) As Ptr
 		    Declare Sub CFRelease Lib "Foundation" (CFTypeRef As Ptr)
 		    
-		    Declare Function NSArrayCount Lib "Foundation" selector "count" (ptrToNSArray As Ptr) As UInteger
-		    Declare Function NSArrayObjectAtIndex Lib "Foundation" selector "objectAtIndex:" (ptrToNSArray As Ptr, index As UInteger) As Ptr
+		    Declare Function NSArrayCount Lib "Foundation" Selector "count" (ptrToNSArray As Ptr) As UInteger
+		    Declare Function NSArrayObjectAtIndex Lib "Foundation" Selector "objectAtIndex:" (ptrToNSArray As Ptr, index As UInteger) As Ptr
 		    Declare Function CFURLCopyFileSystemPath Lib "Foundation" (anURL As Ptr, pathStyle As Int32) As CFStringRef
 		    
 		    Const kCFURLPOSIXPathStyle = 0
@@ -306,7 +306,9 @@ Protected Module modMacOSAppDirectories
 			Name="Name"
 			Visible=true
 			Group="ID"
+			InitialValue=""
 			Type="String"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Index"
@@ -314,12 +316,15 @@ Protected Module modMacOSAppDirectories
 			Group="ID"
 			InitialValue="-2147483648"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Super"
 			Visible=true
 			Group="ID"
+			InitialValue=""
 			Type="String"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Left"
@@ -327,6 +332,7 @@ Protected Module modMacOSAppDirectories
 			Group="Position"
 			InitialValue="0"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Top"
@@ -334,6 +340,7 @@ Protected Module modMacOSAppDirectories
 			Group="Position"
 			InitialValue="0"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 	#tag EndViewBehavior
 End Module

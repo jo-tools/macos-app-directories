@@ -1204,7 +1204,7 @@ End
 		    dlg.Title = "Select a Document"
 		    dlg.Filter = "????"
 		    Dim f As FolderItem = dlg.ShowModal
-		    if (f = nil) or (not f.Exists) then return
+		    If (f = Nil) Or (Not f.Exists) Then Return
 		    
 		    edtURL.Text = f.URLPath
 		    Dim oResults() As FolderItem = GetApplicationsForFile(f, CType(lstRolesMask.RowTagAt(lstRolesMask.SelectedRowIndex), UInteger))
@@ -1238,11 +1238,11 @@ End
 		  Me.AddRow("LSRolesAll")
 		  Me.RowTagAt(4) = CType(LSRolesMask.LSRolesAll, UInteger)
 		  
-		  me.AddRow("-")
-		  me.RowTagAt(5) = CType(LSRolesMask.LSRolesNone, UInteger)
+		  Me.AddRow("-")
+		  Me.RowTagAt(5) = CType(LSRolesMask.LSRolesNone, UInteger)
 		  
-		  me.AddRow("LSRolesViewer | LSRolesEditor")
-		  me.RowTagAt(6) = Bitwise.BitOr(CType(LSRolesMask.LSRolesViewer, UInteger), CType(LSRolesMask.LSRolesEditor, UInteger))
+		  Me.AddRow("LSRolesViewer | LSRolesEditor")
+		  Me.RowTagAt(6) = Bitwise.BitOr(CType(LSRolesMask.LSRolesViewer, UInteger), CType(LSRolesMask.LSRolesEditor, UInteger))
 		  
 		  Me.SelectedRowIndex = Me.RowCount-1
 		  
@@ -1270,62 +1270,70 @@ End
 #tag Events cnvAppIcon
 	#tag Event
 		Sub Paint(g As Graphics, areas() As Rect)
+		  #Pragma unused areas
+		  
 		  g.DrawPicture(AppIcon_64, 0, 0)
 		End Sub
 	#tag EndEvent
 	#tag Event
 		Sub MouseUp(x As Integer, y As Integer)
-		  if (x >= 0) and (x < me.Width) and (y > 0) and (y < me.Height) then
+		  If (x >= 0) And (x < Me.Width) And (y > 0) And (y < Me.Height) Then
 		    ShowURL("https://www.jo-tools.ch/xojo/app-directories/")
-		  end if
+		  End If
 		End Sub
 	#tag EndEvent
 	#tag Event
 		Function MouseDown(x As Integer, y As Integer) As Boolean
-		  return true
+		  #Pragma unused x
+		  #Pragma unused y
+		  
+		  Return True
 		End Function
 	#tag EndEvent
 	#tag Event
 		Sub MouseExit()
-		  me.MouseCursor = nil
+		  Me.MouseCursor = Nil
 		  
 		End Sub
 	#tag EndEvent
 	#tag Event
 		Sub MouseEnter()
-		  me.MouseCursor = System.Cursors.FingerPointer
+		  Me.MouseCursor = System.Cursors.FingerPointer
 		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag Events labAppName1
 	#tag Event
 		Sub Opening()
-		  me.Text = "macOS App Directories"
-		  me.FontSize = 18
-		  me.Bold = true
+		  Me.Text = "macOS App Directories"
+		  Me.FontSize = 18
+		  Me.Bold = True
 		End Sub
 	#tag EndEvent
 	#tag Event
 		Sub MouseUp(x As Integer, y As Integer)
-		  if (x >= 0) and (x < me.Width) and (y > 0) and (y < me.Height) then
+		  If (x >= 0) And (x < Me.Width) And (y > 0) And (y < Me.Height) Then
 		    ShowURL("https://www.jo-tools.ch/xojo/app-directories/")
-		  end if
+		  End If
 		End Sub
 	#tag EndEvent
 	#tag Event
 		Function MouseDown(x As Integer, y As Integer) As Boolean
-		  return true
+		  #Pragma unused x
+		  #Pragma unused y
+		  
+		  Return True
 		End Function
 	#tag EndEvent
 	#tag Event
 		Sub MouseExit()
-		  me.MouseCursor = nil
+		  Me.MouseCursor = Nil
 		  
 		End Sub
 	#tag EndEvent
 	#tag Event
 		Sub MouseEnter()
-		  me.MouseCursor = System.Cursors.FingerPointer
+		  Me.MouseCursor = System.Cursors.FingerPointer
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -1333,46 +1341,49 @@ End
 	#tag Event
 		Sub Opening()
 		  If (App.Version <> "") Then
-		    me.Text = App.Version
-		    return
-		  end if
+		    Me.Text = App.Version
+		    Return
+		  End If
 		  
-		  me.Text = Str(App.MajorVersion) + "." + Str(App.MinorVersion) + "." + Str(App.BugVersion)
+		  Me.Text = Str(App.MajorVersion) + "." + Str(App.MinorVersion) + "." + Str(App.BugVersion)
 		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag Events labContact
 	#tag Event
 		Sub MouseExit()
-		  me.MouseCursor = nil
+		  Me.MouseCursor = Nil
 		  
 		End Sub
 	#tag EndEvent
 	#tag Event
 		Sub MouseEnter()
-		  me.MouseCursor = System.Cursors.FingerPointer
+		  Me.MouseCursor = System.Cursors.FingerPointer
 		End Sub
 	#tag EndEvent
 	#tag Event
 		Function MouseDown(x As Integer, y As Integer) As Boolean
-		  return true
+		  #Pragma unused x
+		  #Pragma unused y
+		  
+		  Return True
 		End Function
 	#tag EndEvent
 	#tag Event
 		Sub MouseUp(x As Integer, y As Integer)
-		  if (x >= 0) and (x < me.Width) and (y > 0) and (y < me.Height) then
+		  If (x >= 0) And (x < Me.Width) And (y > 0) And (y < Me.Height) Then
 		    ShowURL("mailto:xojo@jo-tools.ch")
-		  end if
+		  End If
 		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag Events cnvPayPal
 	#tag Event
 		Sub Paint(g As Graphics, areas() As Rect)
+		  #Pragma unused areas
+		  
 		  g.ForeColor = &cFFFFFF
-		  #if (XojoVersion >= 2018.03) then
-		    if IsDarkMode then g.ForeColor = &cD0D0D0
-		  #endif
+		  If IsDarkMode Then g.ForeColor = &cD0D0D0
 		  g.FillRect(0, 0, g.Width, g.Height)
 		  g.ForeColor = &c909090
 		  g.DrawRect(0, 0, g.Width, g.Height)
@@ -1381,39 +1392,42 @@ End
 	#tag EndEvent
 	#tag Event
 		Sub MouseExit()
-		  me.MouseCursor = nil
+		  Me.MouseCursor = Nil
 		  
 		End Sub
 	#tag EndEvent
 	#tag Event
 		Sub MouseEnter()
-		  me.MouseCursor = System.Cursors.FingerPointer
+		  Me.MouseCursor = System.Cursors.FingerPointer
 		End Sub
 	#tag EndEvent
 	#tag Event
 		Sub MouseUp(x As Integer, y As Integer)
-		  if (x >= 0) and (x < me.Width) and (y > 0) and (y < me.Height) then
+		  If (x >= 0) And (x < Me.Width) And (y > 0) And (y < Me.Height) Then
 		    ShowURL("https://paypal.me/jotools")
-		  end if
+		  End If
 		End Sub
 	#tag EndEvent
 	#tag Event
 		Function MouseDown(x As Integer, y As Integer) As Boolean
-		  return true
+		  #Pragma unused x
+		  #Pragma unused y
+		  
+		  Return True
 		End Function
 	#tag EndEvent
 #tag EndEvents
 #tag Events edtBundleID
 	#tag Event
 		Sub Opening()
-		  me.RemoveAllRows
+		  Me.RemoveAllRows
 		  
-		  me.AddRow "com.apple.terminal"
-		  me.AddRow "com.apple.mail"
-		  me.AddRow "com.apple.dt.Xcode"
-		  me.AddRow "com.xojo.xojo"
+		  Me.AddRow "com.apple.terminal"
+		  Me.AddRow "com.apple.mail"
+		  Me.AddRow "com.apple.dt.Xcode"
+		  Me.AddRow "com.xojo.xojo"
 		  
-		  me.Text = "com.apple.terminal"
+		  Me.Text = "com.apple.terminal"
 		End Sub
 	#tag EndEvent
 #tag EndEvents
