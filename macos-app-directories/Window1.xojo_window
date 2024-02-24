@@ -446,8 +446,8 @@ Begin DesktopWindow Window1
       Left            =   328
       LockBottom      =   False
       LockedInPosition=   True
-      LockLeft        =   False
-      LockRight       =   True
+      LockLeft        =   True
+      LockRight       =   False
       LockTop         =   True
       Scope           =   2
       SelectedRowIndex=   0
@@ -477,7 +477,7 @@ Begin DesktopWindow Window1
       LockBottom      =   False
       LockedInPosition=   True
       LockLeft        =   True
-      LockRight       =   True
+      LockRight       =   False
       LockTop         =   True
       Scope           =   2
       SelectedRowIndex=   0
@@ -564,8 +564,8 @@ Begin DesktopWindow Window1
       Left            =   388
       LockBottom      =   False
       LockedInPosition=   True
-      LockLeft        =   False
-      LockRight       =   True
+      LockLeft        =   True
+      LockRight       =   False
       LockTop         =   True
       MacButtonStyle  =   0
       Scope           =   2
@@ -628,7 +628,7 @@ Begin DesktopWindow Window1
       LockBottom      =   False
       LockedInPosition=   True
       LockLeft        =   True
-      LockRight       =   True
+      LockRight       =   False
       LockTop         =   True
       Scope           =   2
       SelectedRowIndex=   0
@@ -945,7 +945,7 @@ Begin DesktopWindow Window1
       LockBottom      =   False
       LockedInPosition=   True
       LockLeft        =   True
-      LockRight       =   False
+      LockRight       =   True
       LockTop         =   True
       Scope           =   2
       SelectedRowIndex=   0
