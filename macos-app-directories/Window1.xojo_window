@@ -25,11 +25,13 @@ Begin DesktopWindow Window1
    Visible         =   True
    Width           =   620
    Begin DesktopLabel labBundleID
-      AutoDeactivate  =   True
+      AllowAutoDeactivate=   True
       Bold            =   False
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   22
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -46,11 +48,9 @@ Begin DesktopWindow Window1
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "BundleID:"
-      TextAlign       =   0
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   120
       Transparent     =   False
       Underline       =   False
@@ -58,15 +58,16 @@ Begin DesktopWindow Window1
       Width           =   90
    End
    Begin DesktopButton btnFindByBundleID
-      AutoDeactivate  =   True
+      AllowAutoDeactivate=   True
       Bold            =   False
-      ButtonStyle     =   0
       Cancel          =   False
       Caption         =   "Find"
       Default         =   False
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -76,13 +77,12 @@ Begin DesktopWindow Window1
       LockLeft        =   False
       LockRight       =   True
       LockTop         =   True
+      MacButtonStyle  =   0
       Scope           =   2
       TabIndex        =   9
       TabPanelIndex   =   0
       TabStop         =   True
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   121
       Transparent     =   False
       Underline       =   False
@@ -90,23 +90,29 @@ Begin DesktopWindow Window1
       Width           =   80
    End
    Begin DesktopListBox lstResults
-      AutoDeactivate  =   True
-      AutoHideScrollbars=   True
+      AllowAutoDeactivate=   True
+      AllowAutoHideScrollbars=   True
+      AllowExpandableRows=   False
+      AllowFocusRing  =   True
+      AllowResizableColumns=   False
+      AllowRowDragging=   False
+      AllowRowReordering=   False
       Bold            =   False
-      Border          =   True
       ColumnCount     =   1
-      ColumnsResizable=   False
       ColumnWidths    =   ""
       DefaultRowHeight=   -1
+      DropIndicatorVisible=   False
       Enabled         =   True
-      EnableDrag      =   False
-      EnableDragReorder=   False
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       GridLineStyle   =   0
-      HasHeading      =   False
+      HasBorder       =   True
+      HasHeader       =   False
+      HasHorizontalScrollbar=   False
+      HasVerticalScrollbar=   True
       HeadingIndex    =   -1
       Height          =   96
-      HelpTag         =   ""
-      Hierarchical    =   False
       Index           =   -2147483648
       InitialParent   =   ""
       InitialValue    =   ""
@@ -118,32 +124,28 @@ Begin DesktopWindow Window1
       LockRight       =   True
       LockTop         =   True
       RequiresSelection=   False
+      RowSelectionType=   0
       Scope           =   2
-      ScrollbarHorizontal=   False
-      ScrollBarVertical=   True
-      SelectionType   =   0
-      ShowDropIndicator=   False
       TabIndex        =   27
       TabPanelIndex   =   0
       TabStop         =   True
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   345
       Transparent     =   False
       Underline       =   False
-      UseFocusRing    =   True
       Visible         =   True
       Width           =   488
       _ScrollOffset   =   0
       _ScrollWidth    =   -1
    End
    Begin DesktopLabel labResults
-      AutoDeactivate  =   True
+      AllowAutoDeactivate=   True
       Bold            =   False
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   22
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -160,11 +162,9 @@ Begin DesktopWindow Window1
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Results:"
-      TextAlign       =   0
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   345
       Transparent     =   False
       Underline       =   False
@@ -172,11 +172,13 @@ Begin DesktopWindow Window1
       Width           =   80
    End
    Begin DesktopLabel labLaunchInfo
-      AutoDeactivate  =   True
+      AllowAutoDeactivate=   True
       Bold            =   False
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   22
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   True
@@ -193,11 +195,9 @@ Begin DesktopWindow Window1
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Double Click to Launch"
-      TextAlign       =   0
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "SmallSystem"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   444
       Transparent     =   False
       Underline       =   False
@@ -205,15 +205,16 @@ Begin DesktopWindow Window1
       Width           =   488
    End
    Begin DesktopButton btnAppDirectories
-      AutoDeactivate  =   True
+      AllowAutoDeactivate=   True
       Bold            =   False
-      ButtonStyle     =   0
       Cancel          =   False
       Caption         =   "List"
       Default         =   False
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -223,13 +224,12 @@ Begin DesktopWindow Window1
       LockLeft        =   False
       LockRight       =   True
       LockTop         =   True
+      MacButtonStyle  =   0
       Scope           =   2
       TabIndex        =   18
       TabPanelIndex   =   0
       TabStop         =   True
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   221
       Transparent     =   False
       Underline       =   False
@@ -237,11 +237,11 @@ Begin DesktopWindow Window1
       Width           =   80
    End
    Begin DesktopSeparator Separator1
+      Active          =   False
+      AllowAutoDeactivate=   True
       AllowTabStop    =   True
-      AutoDeactivate  =   True
       Enabled         =   True
       Height          =   4
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   0
@@ -250,20 +250,28 @@ Begin DesktopWindow Window1
       LockLeft        =   True
       LockRight       =   True
       LockTop         =   True
+      PanelIndex      =   0
       Scope           =   2
       TabIndex        =   10
       TabPanelIndex   =   0
+      Tooltip         =   ""
       Top             =   152
       Transparent     =   False
       Visible         =   True
       Width           =   620
+      _mIndex         =   0
+      _mInitialParent =   ""
+      _mName          =   ""
+      _mPanelIndex    =   0
    End
    Begin DesktopLabel labAppName
-      AutoDeactivate  =   True
+      AllowAutoDeactivate=   True
       Bold            =   False
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   22
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -280,11 +288,9 @@ Begin DesktopWindow Window1
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "AppName:"
-      TextAlign       =   0
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   168
       Transparent     =   False
       Underline       =   False
@@ -292,28 +298,29 @@ Begin DesktopWindow Window1
       Width           =   90
    End
    Begin DesktopTextField edtAppName
-      AcceptTabs      =   False
-      Alignment       =   0
-      AutoDeactivate  =   True
-      AutomaticallyCheckSpelling=   False
-      BackColor       =   &cFFFFFF00
+      AllowAutoDeactivate=   True
+      AllowFocusRing  =   True
+      AllowSpellChecking=   False
+      AllowTabs       =   False
+      BackgroundColor =   &cFFFFFF
       Bold            =   False
-      Border          =   True
-      CueText         =   "Application Name (e.g.: Mail.app)"
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Format          =   ""
+      HasBorder       =   True
       Height          =   22
-      HelpTag         =   ""
+      Hint            =   ""
       Index           =   -2147483648
       Italic          =   False
       Left            =   112
-      LimitText       =   0
       LockBottom      =   False
       LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   True
       LockTop         =   True
-      Mask            =   ""
+      MaximumCharactersAllowed=   0
       Password        =   False
       ReadOnly        =   False
       Scope           =   2
@@ -321,27 +328,27 @@ Begin DesktopWindow Window1
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Mail.app"
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   168
       Transparent     =   False
       Underline       =   False
-      UseFocusRing    =   True
+      ValidationMask  =   ""
       Visible         =   True
       Width           =   396
    End
    Begin DesktopButton btnFindByAppName
-      AutoDeactivate  =   True
+      AllowAutoDeactivate=   True
       Bold            =   False
-      ButtonStyle     =   0
       Cancel          =   False
       Caption         =   "Find"
       Default         =   False
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -351,13 +358,12 @@ Begin DesktopWindow Window1
       LockLeft        =   False
       LockRight       =   True
       LockTop         =   True
+      MacButtonStyle  =   0
       Scope           =   2
       TabIndex        =   13
       TabPanelIndex   =   0
       TabStop         =   True
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   168
       Transparent     =   False
       Underline       =   False
@@ -365,11 +371,11 @@ Begin DesktopWindow Window1
       Width           =   80
    End
    Begin DesktopSeparator Separator2
+      Active          =   False
+      AllowAutoDeactivate=   True
       AllowTabStop    =   True
-      AutoDeactivate  =   True
       Enabled         =   True
       Height          =   4
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   0
@@ -378,20 +384,28 @@ Begin DesktopWindow Window1
       LockLeft        =   True
       LockRight       =   True
       LockTop         =   True
+      PanelIndex      =   0
       Scope           =   2
       TabIndex        =   14
       TabPanelIndex   =   0
+      Tooltip         =   ""
       Top             =   205
       Transparent     =   False
       Visible         =   True
       Width           =   620
+      _mIndex         =   0
+      _mInitialParent =   ""
+      _mName          =   ""
+      _mPanelIndex    =   0
    End
    Begin DesktopLabel labDirectories
-      AutoDeactivate  =   True
+      AllowAutoDeactivate=   True
       Bold            =   False
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   22
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -408,11 +422,9 @@ Begin DesktopWindow Window1
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Directories:"
-      TextAlign       =   0
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   220
       Transparent     =   False
       Underline       =   False
@@ -420,29 +432,29 @@ Begin DesktopWindow Window1
       Width           =   90
    End
    Begin DesktopPopupMenu lstSearchPathDomain
-      AutoDeactivate  =   True
+      AllowAutoDeactivate=   True
       Bold            =   False
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       InitialValue    =   ""
       Italic          =   False
       Left            =   328
-      ListIndex       =   0
       LockBottom      =   False
       LockedInPosition=   True
       LockLeft        =   False
       LockRight       =   True
       LockTop         =   True
       Scope           =   2
+      SelectedRowIndex=   0
       TabIndex        =   17
       TabPanelIndex   =   0
       TabStop         =   True
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   220
       Transparent     =   False
       Underline       =   False
@@ -450,29 +462,29 @@ Begin DesktopWindow Window1
       Width           =   180
    End
    Begin DesktopPopupMenu lstSearchPath
-      AutoDeactivate  =   True
+      AllowAutoDeactivate=   True
       Bold            =   False
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       InitialValue    =   ""
       Italic          =   False
       Left            =   112
-      ListIndex       =   0
       LockBottom      =   False
       LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   True
       LockTop         =   True
       Scope           =   2
+      SelectedRowIndex=   0
       TabIndex        =   16
       TabPanelIndex   =   0
       TabStop         =   True
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   220
       Transparent     =   False
       Underline       =   False
@@ -480,11 +492,11 @@ Begin DesktopWindow Window1
       Width           =   205
    End
    Begin DesktopSeparator Separator3
+      Active          =   False
+      AllowAutoDeactivate=   True
       AllowTabStop    =   True
-      AutoDeactivate  =   True
       Enabled         =   True
       Height          =   4
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   0
@@ -493,20 +505,26 @@ Begin DesktopWindow Window1
       LockLeft        =   True
       LockRight       =   True
       LockTop         =   True
+      PanelIndex      =   0
       Scope           =   2
       TabIndex        =   19
       TabPanelIndex   =   0
+      Tooltip         =   ""
       Top             =   255
       Transparent     =   False
       Visible         =   True
       Width           =   620
+      _mIndex         =   0
+      _mInitialParent =   ""
+      _mName          =   ""
+      _mPanelIndex    =   0
    End
    Begin DesktopSeparator Separator4
+      Active          =   False
+      AllowAutoDeactivate=   True
       AllowTabStop    =   True
-      AutoDeactivate  =   True
       Enabled         =   True
       Height          =   4
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   0
@@ -515,24 +533,31 @@ Begin DesktopWindow Window1
       LockLeft        =   True
       LockRight       =   True
       LockTop         =   True
+      PanelIndex      =   0
       Scope           =   2
       TabIndex        =   25
       TabPanelIndex   =   0
+      Tooltip         =   ""
       Top             =   325
       Transparent     =   False
       Visible         =   True
       Width           =   620
+      _mIndex         =   0
+      _mInitialParent =   ""
+      _mName          =   ""
+      _mPanelIndex    =   0
    End
    Begin DesktopButton btnAppURLs_SelectFile
-      AutoDeactivate  =   True
+      AllowAutoDeactivate=   True
       Bold            =   False
-      ButtonStyle     =   0
       Cancel          =   False
       Caption         =   "Select a File"
       Default         =   False
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   "Select a Document, and locate Applications that can deal with it."
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -542,25 +567,26 @@ Begin DesktopWindow Window1
       LockLeft        =   False
       LockRight       =   True
       LockTop         =   True
+      MacButtonStyle  =   0
       Scope           =   2
       TabIndex        =   22
       TabPanelIndex   =   0
       TabStop         =   True
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
-      Top             =   271
+      Tooltip         =   ""
+      Top             =   270
       Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   120
    End
    Begin DesktopLabel labAppURLs
-      AutoDeactivate  =   True
+      AllowAutoDeactivate=   True
       Bold            =   False
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   22
-      HelpTag         =   "Locate Application that can deal with a given URL."
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -577,11 +603,9 @@ Begin DesktopWindow Window1
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Applications:"
-      TextAlign       =   0
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   270
       Transparent     =   False
       Underline       =   False
@@ -589,29 +613,29 @@ Begin DesktopWindow Window1
       Width           =   90
    End
    Begin DesktopPopupMenu lstRolesMask
-      AutoDeactivate  =   True
+      AllowAutoDeactivate=   True
       Bold            =   False
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       InitialValue    =   ""
       Italic          =   False
       Left            =   112
-      ListIndex       =   0
       LockBottom      =   False
       LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   True
       LockTop         =   True
       Scope           =   2
+      SelectedRowIndex=   0
       TabIndex        =   21
       TabPanelIndex   =   0
       TabStop         =   True
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   270
       Transparent     =   False
       Underline       =   False
@@ -619,15 +643,16 @@ Begin DesktopWindow Window1
       Width           =   260
    End
    Begin DesktopButton btnAppURLs
-      AutoDeactivate  =   True
+      AllowAutoDeactivate=   True
       Bold            =   False
-      ButtonStyle     =   0
       Cancel          =   False
       Caption         =   "List"
       Default         =   False
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   "Locate Application that can deal with the URL."
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -637,13 +662,12 @@ Begin DesktopWindow Window1
       LockLeft        =   False
       LockRight       =   True
       LockTop         =   True
+      MacButtonStyle  =   0
       Scope           =   2
       TabIndex        =   24
       TabPanelIndex   =   0
       TabStop         =   True
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   299
       Transparent     =   False
       Underline       =   False
@@ -651,28 +675,29 @@ Begin DesktopWindow Window1
       Width           =   80
    End
    Begin DesktopTextField edtURL
-      AcceptTabs      =   False
-      Alignment       =   0
-      AutoDeactivate  =   True
-      AutomaticallyCheckSpelling=   False
-      BackColor       =   &cFFFFFF00
+      AllowAutoDeactivate=   True
+      AllowFocusRing  =   True
+      AllowSpellChecking=   False
+      AllowTabs       =   False
+      BackgroundColor =   &cFFFFFF
       Bold            =   False
-      Border          =   True
-      CueText         =   "Application Name (e.g.: Mail.app)"
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Format          =   ""
+      HasBorder       =   True
       Height          =   22
-      HelpTag         =   ""
+      Hint            =   ""
       Index           =   -2147483648
       Italic          =   False
       Left            =   112
-      LimitText       =   0
       LockBottom      =   False
       LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   True
       LockTop         =   True
-      Mask            =   ""
+      MaximumCharactersAllowed=   0
       Password        =   False
       ReadOnly        =   False
       Scope           =   2
@@ -680,25 +705,24 @@ Begin DesktopWindow Window1
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "https://www.jo-tools.ch/"
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   298
       Transparent     =   False
       Underline       =   False
-      UseFocusRing    =   True
+      ValidationMask  =   ""
       Visible         =   True
       Width           =   396
    End
    Begin DesktopCanvas cnvAppIcon
-      AcceptFocus     =   False
-      AcceptTabs      =   False
-      AutoDeactivate  =   True
+      AllowAutoDeactivate=   True
+      AllowFocus      =   False
+      AllowFocusRing  =   True
+      AllowTabs       =   False
       Backdrop        =   0
       Enabled         =   True
       Height          =   64
-      HelpTag         =   "https://www.jo-tools.ch/xojo/app-directories/"
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   25
@@ -711,18 +735,20 @@ Begin DesktopWindow Window1
       TabIndex        =   2
       TabPanelIndex   =   0
       TabStop         =   True
+      Tooltip         =   ""
       Top             =   24
       Transparent     =   True
-      UseFocusRing    =   True
       Visible         =   True
       Width           =   64
    End
    Begin DesktopLabel labAppName1
-      AutoDeactivate  =   True
+      AllowAutoDeactivate=   True
       Bold            =   True
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   30
-      HelpTag         =   "https://www.jo-tools.ch/xojo/app-directories/"
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -739,11 +765,9 @@ Begin DesktopWindow Window1
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "macOS App Directories"
-      TextAlign       =   0
+      TextAlignment   =   0
       TextColor       =   &c0072D800
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   20
       Transparent     =   True
       Underline       =   True
@@ -751,11 +775,13 @@ Begin DesktopWindow Window1
       Width           =   200
    End
    Begin DesktopLabel labThanks
-      AutoDeactivate  =   True
+      AllowAutoDeactivate=   True
       Bold            =   False
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   30
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -772,11 +798,9 @@ Begin DesktopWindow Window1
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Would you like to say 'Thank you'?"
-      TextAlign       =   3
+      TextAlignment   =   0
       TextColor       =   &c66666600
-      TextFont        =   "SmallSystem"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   20
       Transparent     =   True
       Underline       =   False
@@ -784,11 +808,13 @@ Begin DesktopWindow Window1
       Width           =   209
    End
    Begin DesktopLabel labAppVersion
-      AutoDeactivate  =   True
+      AllowAutoDeactivate=   True
       Bold            =   False
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   30
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -805,11 +831,9 @@ Begin DesktopWindow Window1
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "AppVersion"
-      TextAlign       =   0
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   54
       Transparent     =   True
       Underline       =   False
@@ -817,11 +841,13 @@ Begin DesktopWindow Window1
       Width           =   200
    End
    Begin DesktopLabel labContact
-      AutoDeactivate  =   True
+      AllowAutoDeactivate=   True
       Bold            =   False
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   30
-      HelpTag         =   "xojo@jo-tools.ch"
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -838,11 +864,9 @@ Begin DesktopWindow Window1
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Contact"
-      TextAlign       =   2
+      TextAlignment   =   0
       TextColor       =   &c0072CE00
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   54
       Transparent     =   True
       Underline       =   True
@@ -850,13 +874,13 @@ Begin DesktopWindow Window1
       Width           =   70
    End
    Begin DesktopCanvas cnvPayPal
-      AcceptFocus     =   False
-      AcceptTabs      =   False
-      AutoDeactivate  =   True
+      AllowAutoDeactivate=   True
+      AllowFocus      =   False
+      AllowFocusRing  =   True
+      AllowTabs       =   False
       Backdrop        =   0
       Enabled         =   True
       Height          =   30
-      HelpTag         =   "https://paypal.me/jotools"
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   494
@@ -869,18 +893,18 @@ Begin DesktopWindow Window1
       TabIndex        =   5
       TabPanelIndex   =   0
       TabStop         =   True
+      Tooltip         =   ""
       Top             =   54
       Transparent     =   True
-      UseFocusRing    =   True
       Visible         =   True
       Width           =   106
    End
    Begin DesktopSeparator Separator5
+      Active          =   False
+      AllowAutoDeactivate=   True
       AllowTabStop    =   True
-      AutoDeactivate  =   True
       Enabled         =   True
       Height          =   3
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   0
@@ -889,43 +913,49 @@ Begin DesktopWindow Window1
       LockLeft        =   True
       LockRight       =   True
       LockTop         =   True
+      PanelIndex      =   0
       Scope           =   2
       TabIndex        =   6
       TabPanelIndex   =   0
+      Tooltip         =   ""
       Top             =   100
       Transparent     =   True
       Visible         =   True
       Width           =   620
+      _mIndex         =   0
+      _mInitialParent =   ""
+      _mName          =   ""
+      _mPanelIndex    =   0
    End
    Begin DesktopComboBox edtBundleID
-      AutoComplete    =   False
-      AutoDeactivate  =   True
+      AllowAutoComplete=   False
+      AllowAutoDeactivate=   True
+      AllowFocusRing  =   True
       Bold            =   False
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Hint            =   ""
       Index           =   -2147483648
       InitialValue    =   "com.apple.terminal"
       Italic          =   False
       Left            =   112
-      ListIndex       =   0
       LockBottom      =   False
       LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   True
       Scope           =   2
+      SelectedRowIndex=   0
       TabIndex        =   8
       TabPanelIndex   =   0
       TabStop         =   True
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   120
       Transparent     =   False
       Underline       =   False
-      UseFocusRing    =   True
       Visible         =   True
       Width           =   396
    End
@@ -1437,8 +1467,7 @@ End
 			"6 - Rounded Window"
 			"7 - Global Floating Window"
 			"8 - Sheet Window"
-			"9 - Metal Window"
-			"11 - Modeless Dialog"
+			"9 - Modeless Dialog"
 		#tag EndEnumValues
 	#tag EndViewProperty
 	#tag ViewProperty
@@ -1501,8 +1530,8 @@ End
 		Visible=true
 		Group="Background"
 		InitialValue="&hFFFFFF"
-		Type="Color"
-		EditorType="Color"
+		Type="ColorGroup"
+		EditorType="ColorGroup"
 	#tag EndViewProperty
 	#tag ViewProperty
 		Name="Name"
@@ -1613,7 +1642,7 @@ End
 		Visible=true
 		Group="Menus"
 		InitialValue=""
-		Type="MenuBar"
+		Type="DesktopMenuBar"
 		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
