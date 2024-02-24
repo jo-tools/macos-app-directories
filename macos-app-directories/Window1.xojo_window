@@ -1,39 +1,37 @@
-#tag Window
-Begin Window Window1
-   BackColor       =   &cFFFFFF00
+#tag DesktopWindow
+Begin DesktopWindow Window1
    Backdrop        =   0
-   CloseButton     =   True
-   Compatibility   =   ""
+   BackgroundColor =   &cFFFFFF00
    Composite       =   False
-   Frame           =   0
+   DefaultLocation =   0
    FullScreen      =   False
-   FullScreenButton=   False
-   HasBackColor    =   False
+   HasBackgroundColor=   False
+   HasCloseButton  =   True
+   HasFullScreenButton=   False
+   HasMaximizeButton=   True
+   HasMinimizeButton=   True
    Height          =   480
    ImplicitInstance=   True
-   LiveResize      =   True
    MacProcID       =   0
-   MaxHeight       =   32000
-   MaximizeButton  =   True
-   MaxWidth        =   32000
+   MaximumHeight   =   32000
+   MaximumWidth    =   32000
    MenuBar         =   601565183
    MenuBarVisible  =   True
-   MinHeight       =   480
-   MinimizeButton  =   True
-   MinWidth        =   620
-   Placement       =   0
+   MinimumHeight   =   480
+   MinimumWidth    =   620
    Resizeable      =   True
    Title           =   "macOS - App Directories"
+   Type            =   0
    Visible         =   True
    Width           =   620
-   Begin Label labBundleID
-      AutoDeactivate  =   True
+   Begin DesktopLabel labBundleID
+      AllowAutoDeactivate=   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   22
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -50,27 +48,26 @@ Begin Window Window1
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "BundleID:"
-      TextAlign       =   0
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   120
       Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   90
    End
-   Begin PushButton btnFindByBundleID
-      AutoDeactivate  =   True
+   Begin DesktopButton btnFindByBundleID
+      AllowAutoDeactivate=   True
       Bold            =   False
-      ButtonStyle     =   "0"
       Cancel          =   False
       Caption         =   "Find"
       Default         =   False
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -80,40 +77,42 @@ Begin Window Window1
       LockLeft        =   False
       LockRight       =   True
       LockTop         =   True
+      MacButtonStyle  =   0
       Scope           =   2
       TabIndex        =   9
       TabPanelIndex   =   0
       TabStop         =   True
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   121
       Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   80
    End
-   Begin Listbox lstResults
-      AutoDeactivate  =   True
-      AutoHideScrollbars=   True
+   Begin DesktopListBox lstResults
+      AllowAutoDeactivate=   True
+      AllowAutoHideScrollbars=   True
+      AllowExpandableRows=   False
+      AllowFocusRing  =   True
+      AllowResizableColumns=   False
+      AllowRowDragging=   False
+      AllowRowReordering=   False
       Bold            =   False
-      Border          =   True
       ColumnCount     =   1
-      ColumnsResizable=   False
       ColumnWidths    =   ""
-      DataField       =   ""
-      DataSource      =   ""
       DefaultRowHeight=   -1
+      DropIndicatorVisible=   False
       Enabled         =   True
-      EnableDrag      =   False
-      EnableDragReorder=   False
-      GridLinesHorizontal=   0
-      GridLinesVertical=   0
-      HasHeading      =   False
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      GridLineStyle   =   0
+      HasBorder       =   True
+      HasHeader       =   False
+      HasHorizontalScrollbar=   False
+      HasVerticalScrollbar=   True
       HeadingIndex    =   -1
       Height          =   96
-      HelpTag         =   ""
-      Hierarchical    =   False
       Index           =   -2147483648
       InitialParent   =   ""
       InitialValue    =   ""
@@ -125,34 +124,28 @@ Begin Window Window1
       LockRight       =   True
       LockTop         =   True
       RequiresSelection=   False
+      RowSelectionType=   0
       Scope           =   2
-      ScrollbarHorizontal=   False
-      ScrollBarVertical=   True
-      SelectionType   =   0
-      ShowDropIndicator=   False
       TabIndex        =   27
       TabPanelIndex   =   0
       TabStop         =   True
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   345
       Transparent     =   False
       Underline       =   False
-      UseFocusRing    =   True
       Visible         =   True
       Width           =   488
       _ScrollOffset   =   0
       _ScrollWidth    =   -1
    End
-   Begin Label labResults
-      AutoDeactivate  =   True
+   Begin DesktopLabel labResults
+      AllowAutoDeactivate=   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   22
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -169,25 +162,23 @@ Begin Window Window1
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Results:"
-      TextAlign       =   0
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   345
       Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   80
    End
-   Begin Label labLaunchInfo
-      AutoDeactivate  =   True
+   Begin DesktopLabel labLaunchInfo
+      AllowAutoDeactivate=   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   22
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   True
@@ -204,27 +195,26 @@ Begin Window Window1
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Double Click to Launch"
-      TextAlign       =   0
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "SmallSystem"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   444
       Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   488
    End
-   Begin PushButton btnAppDirectories
-      AutoDeactivate  =   True
+   Begin DesktopButton btnAppDirectories
+      AllowAutoDeactivate=   True
       Bold            =   False
-      ButtonStyle     =   "0"
       Cancel          =   False
       Caption         =   "List"
       Default         =   False
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -234,24 +224,24 @@ Begin Window Window1
       LockLeft        =   False
       LockRight       =   True
       LockTop         =   True
+      MacButtonStyle  =   0
       Scope           =   2
       TabIndex        =   18
       TabPanelIndex   =   0
       TabStop         =   True
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   221
       Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   80
    End
-   Begin Separator Separator1
-      AutoDeactivate  =   True
+   Begin DesktopSeparator Separator1
+      Active          =   False
+      AllowAutoDeactivate=   True
+      AllowTabStop    =   True
       Enabled         =   True
       Height          =   4
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   0
@@ -260,23 +250,28 @@ Begin Window Window1
       LockLeft        =   True
       LockRight       =   True
       LockTop         =   True
+      PanelIndex      =   0
       Scope           =   2
       TabIndex        =   10
       TabPanelIndex   =   0
-      TabStop         =   True
+      Tooltip         =   ""
       Top             =   152
       Transparent     =   False
       Visible         =   True
       Width           =   620
+      _mIndex         =   0
+      _mInitialParent =   ""
+      _mName          =   ""
+      _mPanelIndex    =   0
    End
-   Begin Label labAppName
-      AutoDeactivate  =   True
+   Begin DesktopLabel labAppName
+      AllowAutoDeactivate=   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   22
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -293,42 +288,39 @@ Begin Window Window1
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "AppName:"
-      TextAlign       =   0
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   168
       Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   90
    End
-   Begin TextField edtAppName
-      AcceptTabs      =   False
-      Alignment       =   0
-      AutoDeactivate  =   True
-      AutomaticallyCheckSpelling=   False
-      BackColor       =   &cFFFFFF00
+   Begin DesktopTextField edtAppName
+      AllowAutoDeactivate=   True
+      AllowFocusRing  =   True
+      AllowSpellChecking=   False
+      AllowTabs       =   False
+      BackgroundColor =   &cFFFFFF
       Bold            =   False
-      Border          =   True
-      CueText         =   "Application Name (e.g.: Mail.app)"
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Format          =   ""
+      HasBorder       =   True
       Height          =   22
-      HelpTag         =   ""
+      Hint            =   ""
       Index           =   -2147483648
       Italic          =   False
       Left            =   112
-      LimitText       =   0
       LockBottom      =   False
       LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   True
       LockTop         =   True
-      Mask            =   ""
+      MaximumCharactersAllowed=   0
       Password        =   False
       ReadOnly        =   False
       Scope           =   2
@@ -336,27 +328,27 @@ Begin Window Window1
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Mail.app"
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   168
       Transparent     =   False
       Underline       =   False
-      UseFocusRing    =   True
+      ValidationMask  =   ""
       Visible         =   True
       Width           =   396
    End
-   Begin PushButton btnFindByAppName
-      AutoDeactivate  =   True
+   Begin DesktopButton btnFindByAppName
+      AllowAutoDeactivate=   True
       Bold            =   False
-      ButtonStyle     =   "0"
       Cancel          =   False
       Caption         =   "Find"
       Default         =   False
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -366,24 +358,24 @@ Begin Window Window1
       LockLeft        =   False
       LockRight       =   True
       LockTop         =   True
+      MacButtonStyle  =   0
       Scope           =   2
       TabIndex        =   13
       TabPanelIndex   =   0
       TabStop         =   True
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   168
       Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   80
    End
-   Begin Separator Separator2
-      AutoDeactivate  =   True
+   Begin DesktopSeparator Separator2
+      Active          =   False
+      AllowAutoDeactivate=   True
+      AllowTabStop    =   True
       Enabled         =   True
       Height          =   4
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   0
@@ -392,23 +384,28 @@ Begin Window Window1
       LockLeft        =   True
       LockRight       =   True
       LockTop         =   True
+      PanelIndex      =   0
       Scope           =   2
       TabIndex        =   14
       TabPanelIndex   =   0
-      TabStop         =   True
+      Tooltip         =   ""
       Top             =   205
       Transparent     =   False
       Visible         =   True
       Width           =   620
+      _mIndex         =   0
+      _mInitialParent =   ""
+      _mName          =   ""
+      _mPanelIndex    =   0
    End
-   Begin Label labDirectories
-      AutoDeactivate  =   True
+   Begin DesktopLabel labDirectories
+      AllowAutoDeactivate=   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   22
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -425,86 +422,81 @@ Begin Window Window1
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Directories:"
-      TextAlign       =   0
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   220
       Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   90
    End
-   Begin PopupMenu lstSearchPathDomain
-      AutoDeactivate  =   True
+   Begin DesktopPopupMenu lstSearchPathDomain
+      AllowAutoDeactivate=   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       InitialValue    =   ""
       Italic          =   False
       Left            =   328
-      ListIndex       =   0
       LockBottom      =   False
       LockedInPosition=   True
-      LockLeft        =   False
-      LockRight       =   True
+      LockLeft        =   True
+      LockRight       =   False
       LockTop         =   True
       Scope           =   2
+      SelectedRowIndex=   0
       TabIndex        =   17
       TabPanelIndex   =   0
       TabStop         =   True
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   220
       Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   180
    End
-   Begin PopupMenu lstSearchPath
-      AutoDeactivate  =   True
+   Begin DesktopPopupMenu lstSearchPath
+      AllowAutoDeactivate=   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       InitialValue    =   ""
       Italic          =   False
       Left            =   112
-      ListIndex       =   0
       LockBottom      =   False
       LockedInPosition=   True
       LockLeft        =   True
-      LockRight       =   True
+      LockRight       =   False
       LockTop         =   True
       Scope           =   2
+      SelectedRowIndex=   0
       TabIndex        =   16
       TabPanelIndex   =   0
       TabStop         =   True
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   220
       Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   205
    End
-   Begin Separator Separator3
-      AutoDeactivate  =   True
+   Begin DesktopSeparator Separator3
+      Active          =   False
+      AllowAutoDeactivate=   True
+      AllowTabStop    =   True
       Enabled         =   True
       Height          =   4
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   0
@@ -513,20 +505,26 @@ Begin Window Window1
       LockLeft        =   True
       LockRight       =   True
       LockTop         =   True
+      PanelIndex      =   0
       Scope           =   2
       TabIndex        =   19
       TabPanelIndex   =   0
-      TabStop         =   True
+      Tooltip         =   ""
       Top             =   255
       Transparent     =   False
       Visible         =   True
       Width           =   620
+      _mIndex         =   0
+      _mInitialParent =   ""
+      _mName          =   ""
+      _mPanelIndex    =   0
    End
-   Begin Separator Separator4
-      AutoDeactivate  =   True
+   Begin DesktopSeparator Separator4
+      Active          =   False
+      AllowAutoDeactivate=   True
+      AllowTabStop    =   True
       Enabled         =   True
       Height          =   4
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   0
@@ -535,55 +533,60 @@ Begin Window Window1
       LockLeft        =   True
       LockRight       =   True
       LockTop         =   True
+      PanelIndex      =   0
       Scope           =   2
       TabIndex        =   25
       TabPanelIndex   =   0
-      TabStop         =   True
+      Tooltip         =   ""
       Top             =   325
       Transparent     =   False
       Visible         =   True
       Width           =   620
+      _mIndex         =   0
+      _mInitialParent =   ""
+      _mName          =   ""
+      _mPanelIndex    =   0
    End
-   Begin PushButton btnAppURLs_SelectFile
-      AutoDeactivate  =   True
+   Begin DesktopButton btnAppURLs_SelectFile
+      AllowAutoDeactivate=   True
       Bold            =   False
-      ButtonStyle     =   "0"
       Cancel          =   False
       Caption         =   "Select a File"
       Default         =   False
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   "Select a Document, and locate Applications that can deal with it."
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
       Left            =   388
       LockBottom      =   False
       LockedInPosition=   True
-      LockLeft        =   False
-      LockRight       =   True
+      LockLeft        =   True
+      LockRight       =   False
       LockTop         =   True
+      MacButtonStyle  =   0
       Scope           =   2
       TabIndex        =   22
       TabPanelIndex   =   0
       TabStop         =   True
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
-      Top             =   271
+      Tooltip         =   ""
+      Top             =   270
       Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   120
    End
-   Begin Label labAppURLs
-      AutoDeactivate  =   True
+   Begin DesktopLabel labAppURLs
+      AllowAutoDeactivate=   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   22
-      HelpTag         =   "Locate Application that can deal with a given URL."
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -600,59 +603,56 @@ Begin Window Window1
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Applications:"
-      TextAlign       =   0
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   270
       Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   90
    End
-   Begin PopupMenu lstRolesMask
-      AutoDeactivate  =   True
+   Begin DesktopPopupMenu lstRolesMask
+      AllowAutoDeactivate=   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       InitialValue    =   ""
       Italic          =   False
       Left            =   112
-      ListIndex       =   0
       LockBottom      =   False
       LockedInPosition=   True
       LockLeft        =   True
-      LockRight       =   True
+      LockRight       =   False
       LockTop         =   True
       Scope           =   2
+      SelectedRowIndex=   0
       TabIndex        =   21
       TabPanelIndex   =   0
       TabStop         =   True
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   270
       Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   260
    End
-   Begin PushButton btnAppURLs
-      AutoDeactivate  =   True
+   Begin DesktopButton btnAppURLs
+      AllowAutoDeactivate=   True
       Bold            =   False
-      ButtonStyle     =   "0"
       Cancel          =   False
       Caption         =   "List"
       Default         =   False
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   "Locate Application that can deal with the URL."
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -662,44 +662,42 @@ Begin Window Window1
       LockLeft        =   False
       LockRight       =   True
       LockTop         =   True
+      MacButtonStyle  =   0
       Scope           =   2
       TabIndex        =   24
       TabPanelIndex   =   0
       TabStop         =   True
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   299
       Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   80
    End
-   Begin TextField edtURL
-      AcceptTabs      =   False
-      Alignment       =   0
-      AutoDeactivate  =   True
-      AutomaticallyCheckSpelling=   False
-      BackColor       =   &cFFFFFF00
+   Begin DesktopTextField edtURL
+      AllowAutoDeactivate=   True
+      AllowFocusRing  =   True
+      AllowSpellChecking=   False
+      AllowTabs       =   False
+      BackgroundColor =   &cFFFFFF
       Bold            =   False
-      Border          =   True
-      CueText         =   "Application Name (e.g.: Mail.app)"
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Format          =   ""
+      HasBorder       =   True
       Height          =   22
-      HelpTag         =   ""
+      Hint            =   ""
       Index           =   -2147483648
       Italic          =   False
       Left            =   112
-      LimitText       =   0
       LockBottom      =   False
       LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   True
       LockTop         =   True
-      Mask            =   ""
+      MaximumCharactersAllowed=   0
       Password        =   False
       ReadOnly        =   False
       Scope           =   2
@@ -707,27 +705,24 @@ Begin Window Window1
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "https://www.jo-tools.ch/"
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   298
       Transparent     =   False
       Underline       =   False
-      UseFocusRing    =   True
+      ValidationMask  =   ""
       Visible         =   True
       Width           =   396
    End
-   Begin Canvas cnvAppIcon
-      AcceptFocus     =   False
-      AcceptTabs      =   False
-      AutoDeactivate  =   True
+   Begin DesktopCanvas cnvAppIcon
+      AllowAutoDeactivate=   True
+      AllowFocus      =   False
+      AllowFocusRing  =   True
+      AllowTabs       =   False
       Backdrop        =   0
-      DoubleBuffer    =   False
       Enabled         =   True
-      EraseBackground =   True
       Height          =   64
-      HelpTag         =   "https://www.jo-tools.ch/xojo/app-directories/"
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   25
@@ -740,20 +735,20 @@ Begin Window Window1
       TabIndex        =   2
       TabPanelIndex   =   0
       TabStop         =   True
+      Tooltip         =   ""
       Top             =   24
       Transparent     =   True
-      UseFocusRing    =   True
       Visible         =   True
       Width           =   64
    End
-   Begin Label labAppName1
-      AutoDeactivate  =   True
+   Begin DesktopLabel labAppName1
+      AllowAutoDeactivate=   True
       Bold            =   True
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   30
-      HelpTag         =   "https://www.jo-tools.ch/xojo/app-directories/"
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -770,25 +765,23 @@ Begin Window Window1
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "macOS App Directories"
-      TextAlign       =   0
+      TextAlignment   =   0
       TextColor       =   &c0072D800
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   20
       Transparent     =   True
       Underline       =   True
       Visible         =   True
       Width           =   200
    End
-   Begin Label labThanks
-      AutoDeactivate  =   True
+   Begin DesktopLabel labThanks
+      AllowAutoDeactivate=   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   30
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -805,25 +798,23 @@ Begin Window Window1
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Would you like to say 'Thank you'?"
-      TextAlign       =   2
+      TextAlignment   =   0
       TextColor       =   &c66666600
-      TextFont        =   "SmallSystem"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   20
       Transparent     =   True
       Underline       =   False
       Visible         =   True
       Width           =   209
    End
-   Begin Label labAppVersion
-      AutoDeactivate  =   True
+   Begin DesktopLabel labAppVersion
+      AllowAutoDeactivate=   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   30
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -840,25 +831,23 @@ Begin Window Window1
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "AppVersion"
-      TextAlign       =   0
+      TextAlignment   =   0
       TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   54
       Transparent     =   True
       Underline       =   False
       Visible         =   True
       Width           =   200
    End
-   Begin Label labContact
-      AutoDeactivate  =   True
+   Begin DesktopLabel labContact
+      AllowAutoDeactivate=   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   30
-      HelpTag         =   "xojo@jo-tools.ch"
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -875,27 +864,23 @@ Begin Window Window1
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "Contact"
-      TextAlign       =   1
+      TextAlignment   =   0
       TextColor       =   &c0072CE00
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   54
       Transparent     =   True
       Underline       =   True
       Visible         =   True
       Width           =   70
    End
-   Begin Canvas cnvPayPal
-      AcceptFocus     =   False
-      AcceptTabs      =   False
-      AutoDeactivate  =   True
+   Begin DesktopCanvas cnvPayPal
+      AllowAutoDeactivate=   True
+      AllowFocus      =   False
+      AllowFocusRing  =   True
+      AllowTabs       =   False
       Backdrop        =   0
-      DoubleBuffer    =   False
       Enabled         =   True
-      EraseBackground =   True
       Height          =   30
-      HelpTag         =   "https://paypal.me/jotools"
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   494
@@ -908,17 +893,18 @@ Begin Window Window1
       TabIndex        =   5
       TabPanelIndex   =   0
       TabStop         =   True
+      Tooltip         =   ""
       Top             =   54
       Transparent     =   True
-      UseFocusRing    =   True
       Visible         =   True
       Width           =   106
    End
-   Begin Separator Separator5
-      AutoDeactivate  =   True
+   Begin DesktopSeparator Separator5
+      Active          =   False
+      AllowAutoDeactivate=   True
+      AllowTabStop    =   True
       Enabled         =   True
       Height          =   3
-      HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   0
@@ -927,55 +913,65 @@ Begin Window Window1
       LockLeft        =   True
       LockRight       =   True
       LockTop         =   True
+      PanelIndex      =   0
       Scope           =   2
       TabIndex        =   6
       TabPanelIndex   =   0
-      TabStop         =   True
+      Tooltip         =   ""
       Top             =   100
       Transparent     =   True
       Visible         =   True
       Width           =   620
+      _mIndex         =   0
+      _mInitialParent =   ""
+      _mName          =   ""
+      _mPanelIndex    =   0
    End
-   Begin ComboBox edtBundleID
-      AutoComplete    =   False
-      AutoDeactivate  =   True
+   Begin DesktopComboBox edtBundleID
+      AllowAutoComplete=   False
+      AllowAutoDeactivate=   True
+      AllowFocusRing  =   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
       Height          =   20
-      HelpTag         =   ""
+      Hint            =   ""
       Index           =   -2147483648
       InitialValue    =   "com.apple.terminal"
       Italic          =   False
       Left            =   112
-      ListIndex       =   0
       LockBottom      =   False
       LockedInPosition=   True
       LockLeft        =   True
-      LockRight       =   False
+      LockRight       =   True
       LockTop         =   True
       Scope           =   2
+      SelectedRowIndex=   0
       TabIndex        =   8
       TabPanelIndex   =   0
       TabStop         =   True
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
+      Tooltip         =   ""
       Top             =   120
       Transparent     =   False
       Underline       =   False
-      UseFocusRing    =   True
       Visible         =   True
       Width           =   396
    End
 End
-#tag EndWindow
+#tag EndDesktopWindow
 
 #tag WindowCode
 	#tag Event
-		Sub Open()
+		Sub Opening()
 		  Self.Title = "macOS - App Directories  -  v" + Str(App.MajorVersion) + "." + Str(App.MinorVersion) + "." + Str(App.BugVersion)
+		  
+		  #If TargetMacOS Then
+		    Var rect As Xojo.Rect = Self.Bounds
+		    rect.Top = DesktopDisplay.DisplayAt(0).AvailableTop
+		    Self.Bounds = rect
+		  #EndIf
 		  
 		End Sub
 	#tag EndEvent
@@ -983,17 +979,17 @@ End
 
 	#tag Method, Flags = &h21
 		Private Sub AddResults(poItems() As FolderItem)
-		  lstResults.DeleteAllRows
+		  lstResults.RemoveAllRows
 		  
-		  If (poItems = Nil) Or (poItems.Ubound < 0) Then
+		  If (poItems = Nil) Or (poItems.LastIndex < 0) Then
 		    lstResults.AddRow(constNoResults)
-		    lstResults.RowTag(lstResults.LastIndex) = Nil
+		    lstResults.RowTagAt(lstResults.LastAddedRowIndex) = Nil
 		    Return
 		  End If
 		  
-		  For i As Integer = 0 To poItems.Ubound
+		  For i As Integer = 0 To poItems.LastIndex
 		    lstResults.AddRow(poItems(i).NativePath)
-		    lstResults.RowTag(lstResults.LastIndex) = poItems(i)
+		    lstResults.RowTagAt(lstResults.LastAddedRowIndex) = poItems(i)
 		  Next
 		  
 		  lstResults.SetFocus
@@ -1014,183 +1010,183 @@ End
 
 #tag Events btnFindByBundleID
 	#tag Event
-		Sub Action()
-		  lstResults.DeleteAllRows
+		Sub Pressed()
+		  lstResults.RemoveAllRows
 		  
 		  #If TargetMacOS Then
-		    Dim oResults() As FolderItem = FindAppByBundleID(edtBundleID.Text)
+		    Var oResults() As FolderItem = FindAppByBundleID(edtBundleID.Text)
 		    
 		    Self.AddResults(oResults)
 		    
 		  #Else
-		    MsgBox "This example is for macOS only"
+		    MessageBox "This example is for macOS only"
 		  #EndIf
 		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag Events lstResults
 	#tag Event
-		Sub DoubleClick()
-		  Dim oFolderItem As FolderItem = Me.RowTag(Me.ListIndex)
+		Sub DoublePressed()
+		  Var oFolderItem As FolderItem = Me.RowTagAt(Me.SelectedRowIndex)
 		  If (oFolderItem = Nil) Or (Not oFolderItem.Exists) Then Return
 		  
-		  oFolderItem.Launch
+		  oFolderItem.Open
 		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag Events btnAppDirectories
 	#tag Event
-		Sub Action()
-		  lstResults.DeleteAllRows
+		Sub Pressed()
+		  lstResults.RemoveAllRows
 		  
 		  #If TargetMacOS Then
-		    Dim oResults() As FolderItem = GetApplicationsDirectories( _
-		    CType(lstSearchPath.RowTag(lstSearchPath.ListIndex), NSSearchPathDirectory), _
-		    CType(lstSearchPathDomain.RowTag(lstSearchPathDomain.ListIndex), NSSearchPathDomainMask) _
+		    Var oResults() As FolderItem = GetApplicationsDirectories( _
+		    CType(lstSearchPath.RowTagAt(lstSearchPath.SelectedRowIndex), NSSearchPathDirectory), _
+		    CType(lstSearchPathDomain.RowTagAt(lstSearchPathDomain.SelectedRowIndex), NSSearchPathDomainMask) _
 		    )
 		    
 		    Self.AddResults(oResults)
 		    
 		  #Else
-		    MsgBox "This example is for macOS only"
+		    MessageBox "This example is for macOS only"
 		  #EndIf
 		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag Events btnFindByAppName
 	#tag Event
-		Sub Action()
-		  lstResults.DeleteAllRows
+		Sub Pressed()
+		  lstResults.RemoveAllRows
 		  
 		  #If TargetMacOS Then
-		    Dim oResults() As FolderItem = FindAppByName(edtAppName.Text)
+		    Var oResults() As FolderItem = FindAppByName(edtAppName.Text)
 		    
 		    Self.AddResults(oResults)
 		    
 		  #Else
-		    MsgBox "This example is for macOS only"
+		    MessageBox "This example is for macOS only"
 		  #EndIf
 		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag Events lstSearchPathDomain
 	#tag Event
-		Sub Open()
-		  Me.DeleteAllRows
+		Sub Opening()
+		  Me.RemoveAllRows
 		  
 		  Me.AddRow("NSUserDomainMask")
-		  Me.RowTag(Me.ListCount-1) = NSSearchPathDomainMask.NSUserDomainMask
+		  Me.RowTagAt(Me.RowCount-1) = NSSearchPathDomainMask.NSUserDomainMask
 		  
 		  Me.AddRow("NSLocalDomainMask")
-		  Me.RowTag(1) = NSSearchPathDomainMask.NSLocalDomainMask
+		  Me.RowTagAt(1) = NSSearchPathDomainMask.NSLocalDomainMask
 		  
 		  Me.AddRow("NSNetworkDomainMask")
-		  Me.RowTag(2) = NSSearchPathDomainMask.NSNetworkDomainMask
+		  Me.RowTagAt(2) = NSSearchPathDomainMask.NSNetworkDomainMask
 		  
 		  Me.AddRow("NSAllDomainsMask")
-		  Me.RowTag(3) = NSSearchPathDomainMask.NSAllDomainsMask
+		  Me.RowTagAt(3) = NSSearchPathDomainMask.NSAllDomainsMask
 		  
 		  
-		  Me.ListIndex = Me.ListCount-1
+		  Me.SelectedRowIndex = Me.RowCount-1
 		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag Events lstSearchPath
 	#tag Event
-		Sub Open()
-		  Me.DeleteAllRows
+		Sub Opening()
+		  Me.RemoveAllRows
 		  
-		  Dim iSel As Integer = 0
+		  Var iSel As Integer = 0
 		  
 		  Me.AddRow("NSApplicationDirectory")
-		  Me.RowTag(Me.ListCount-1) = NSSearchPathDirectory.NSApplicationDirectory
+		  Me.RowTagAt(Me.RowCount-1) = NSSearchPathDirectory.NSApplicationDirectory
 		  
 		  Me.AddRow("NSDemoApplicationDirectory")
-		  Me.RowTag(Me.ListCount-1) = NSSearchPathDirectory.NSDemoApplicationDirectory
+		  Me.RowTagAt(Me.RowCount-1) = NSSearchPathDirectory.NSDemoApplicationDirectory
 		  
 		  Me.AddRow("NSDeveloperApplicationDirectory")
-		  Me.RowTag(Me.ListCount-1) = NSSearchPathDirectory.NSDeveloperApplicationDirectory
+		  Me.RowTagAt(Me.RowCount-1) = NSSearchPathDirectory.NSDeveloperApplicationDirectory
 		  
 		  Me.AddRow("NSAdminApplicationDirectory")
-		  Me.RowTag(Me.ListCount-1) = NSSearchPathDirectory.NSAdminApplicationDirectory
+		  Me.RowTagAt(Me.RowCount-1) = NSSearchPathDirectory.NSAdminApplicationDirectory
 		  
 		  Me.AddRow("NSLibraryDirectory")
-		  Me.RowTag(Me.ListCount-1) = NSSearchPathDirectory.NSLibraryDirectory
+		  Me.RowTagAt(Me.RowCount-1) = NSSearchPathDirectory.NSLibraryDirectory
 		  
 		  Me.AddRow("NSDeveloperDirectory")
-		  Me.RowTag(Me.ListCount-1) = NSSearchPathDirectory.NSDeveloperDirectory
+		  Me.RowTagAt(Me.RowCount-1) = NSSearchPathDirectory.NSDeveloperDirectory
 		  
 		  Me.AddRow("NSUserDirectory")
-		  Me.RowTag(Me.ListCount-1) = NSSearchPathDirectory.NSUserDirectory
+		  Me.RowTagAt(Me.RowCount-1) = NSSearchPathDirectory.NSUserDirectory
 		  
 		  Me.AddRow("NSDocumentationDirectory")
-		  Me.RowTag(Me.ListCount-1) = NSSearchPathDirectory.NSDocumentationDirectory
+		  Me.RowTagAt(Me.RowCount-1) = NSSearchPathDirectory.NSDocumentationDirectory
 		  
 		  Me.AddRow("NSDocumentDirectory")
-		  Me.RowTag(Me.ListCount-1) = NSSearchPathDirectory.NSDocumentDirectory
+		  Me.RowTagAt(Me.RowCount-1) = NSSearchPathDirectory.NSDocumentDirectory
 		  
 		  Me.AddRow("NSCoreServiceDirectory")
-		  Me.RowTag(Me.ListCount-1) = NSSearchPathDirectory.NSCoreServiceDirectory
+		  Me.RowTagAt(Me.RowCount-1) = NSSearchPathDirectory.NSCoreServiceDirectory
 		  
 		  Me.AddRow("NSAutosavedInformationDirectory")
-		  Me.RowTag(Me.ListCount-1) = NSSearchPathDirectory.NSAutosavedInformationDirectory
+		  Me.RowTagAt(Me.RowCount-1) = NSSearchPathDirectory.NSAutosavedInformationDirectory
 		  
 		  Me.AddRow("NSDesktopDirectory")
-		  Me.RowTag(Me.ListCount-1) = NSSearchPathDirectory.NSDesktopDirectory
+		  Me.RowTagAt(Me.RowCount-1) = NSSearchPathDirectory.NSDesktopDirectory
 		  
 		  Me.AddRow("NSCachesDirectory")
-		  Me.RowTag(Me.ListCount-1) = NSSearchPathDirectory.NSCachesDirectory
+		  Me.RowTagAt(Me.RowCount-1) = NSSearchPathDirectory.NSCachesDirectory
 		  
 		  Me.AddRow("NSApplicationSupportDirectory")
-		  Me.RowTag(Me.ListCount-1) = NSSearchPathDirectory.NSApplicationSupportDirectory
+		  Me.RowTagAt(Me.RowCount-1) = NSSearchPathDirectory.NSApplicationSupportDirectory
 		  
 		  Me.AddRow("NSDownloadsDirectory")
-		  Me.RowTag(Me.ListCount-1) = NSSearchPathDirectory.NSDownloadsDirectory
+		  Me.RowTagAt(Me.RowCount-1) = NSSearchPathDirectory.NSDownloadsDirectory
 		  
 		  Me.AddRow("NSInputMethodsDirectory")
-		  Me.RowTag(Me.ListCount-1) = NSSearchPathDirectory.NSInputMethodsDirectory
+		  Me.RowTagAt(Me.RowCount-1) = NSSearchPathDirectory.NSInputMethodsDirectory
 		  
 		  Me.AddRow("NSMoviesDirectory")
-		  Me.RowTag(Me.ListCount-1) = NSSearchPathDirectory.NSMoviesDirectory
+		  Me.RowTagAt(Me.RowCount-1) = NSSearchPathDirectory.NSMoviesDirectory
 		  
 		  Me.AddRow("NSMusicDirectory")
-		  Me.RowTag(Me.ListCount-1) = NSSearchPathDirectory.NSMusicDirectory
+		  Me.RowTagAt(Me.RowCount-1) = NSSearchPathDirectory.NSMusicDirectory
 		  
 		  Me.AddRow("NSPicturesDirectory")
-		  Me.RowTag(Me.ListCount-1) = NSSearchPathDirectory.NSPicturesDirectory
+		  Me.RowTagAt(Me.RowCount-1) = NSSearchPathDirectory.NSPicturesDirectory
 		  
 		  Me.AddRow("NSPrinterDescriptionDirectory")
-		  Me.RowTag(Me.ListCount-1) = NSSearchPathDirectory.NSPrinterDescriptionDirectory
+		  Me.RowTagAt(Me.RowCount-1) = NSSearchPathDirectory.NSPrinterDescriptionDirectory
 		  
 		  Me.AddRow("NSSharedPublicDirectory")
-		  Me.RowTag(Me.ListCount-1) = NSSearchPathDirectory.NSSharedPublicDirectory
+		  Me.RowTagAt(Me.RowCount-1) = NSSearchPathDirectory.NSSharedPublicDirectory
 		  
 		  Me.AddRow("NSPreferencePanesDirectory")
-		  Me.RowTag(Me.ListCount-1) = NSSearchPathDirectory.NSPreferencePanesDirectory
+		  Me.RowTagAt(Me.RowCount-1) = NSSearchPathDirectory.NSPreferencePanesDirectory
 		  
 		  Me.AddRow("NSApplicationScriptsDirectory")
-		  Me.RowTag(Me.ListCount-1) = NSSearchPathDirectory.NSApplicationScriptsDirectory
+		  Me.RowTagAt(Me.RowCount-1) = NSSearchPathDirectory.NSApplicationScriptsDirectory
 		  
 		  Me.AddRow("-")
 		  Me.AddRow("NSItemReplacementDirectory")
-		  Me.RowTag(Me.ListCount-1) = NSSearchPathDirectory.NSItemReplacementDirectory
+		  Me.RowTagAt(Me.RowCount-1) = NSSearchPathDirectory.NSItemReplacementDirectory
 		  
 		  Me.AddRow("-")
 		  Me.AddRow("NSAllApplicationsDirectory")
-		  Me.RowTag(Me.ListCount-1) = NSSearchPathDirectory.NSAllApplicationsDirectory
-		  iSel = Me.ListCount - 1
+		  Me.RowTagAt(Me.RowCount-1) = NSSearchPathDirectory.NSAllApplicationsDirectory
+		  iSel = Me.RowCount - 1
 		  
 		  Me.AddRow("NSAllLibrariesDirectory")
-		  Me.RowTag(Me.ListCount-1) = NSSearchPathDirectory.NSAllLibrariesDirectory
+		  Me.RowTagAt(Me.RowCount-1) = NSSearchPathDirectory.NSAllLibrariesDirectory
 		  
 		  Me.AddRow("-")
 		  Me.AddRow("NSTrashDirectory")
-		  Me.RowTag(Me.ListCount-1) = NSSearchPathDirectory.NSTrashDirectory
+		  Me.RowTagAt(Me.RowCount-1) = NSSearchPathDirectory.NSTrashDirectory
 		  
 		  
-		  Me.ListIndex = iSel
+		  Me.SelectedRowIndex = iSel
 		  
 		  
 		End Sub
@@ -1198,299 +1194,282 @@ End
 #tag EndEvents
 #tag Events btnAppURLs_SelectFile
 	#tag Event
-		Sub Action()
-		  lstResults.DeleteAllRows
+		Sub Pressed()
+		  lstResults.RemoveAllRows
 		  
 		  #If TargetMacOS Then
 		    
-		    Dim dlg As New OpenDialog
-		    dlg.InitialDirectory = SpecialFolder.Desktop
+		    Var dlg As New OpenFileDialog
+		    dlg.InitialFolder = SpecialFolder.Desktop
 		    dlg.Title = "Select a Document"
 		    dlg.Filter = "????"
-		    Dim f As FolderItem = dlg.ShowModal
-		    if (f = nil) or (not f.Exists) then return
+		    Var f As FolderItem = dlg.ShowModal
+		    If (f = Nil) Or (Not f.Exists) Then Return
 		    
 		    edtURL.Text = f.URLPath
-		    Dim oResults() As FolderItem = GetApplicationsForFile(f, CType(lstRolesMask.RowTag(lstRolesMask.ListIndex), UInteger))
+		    Var oResults() As FolderItem = GetApplicationsForFile(f, CType(lstRolesMask.RowTagAt(lstRolesMask.SelectedRowIndex), UInteger))
 		    
 		    Self.AddResults(oResults)
 		    
 		    
 		  #Else
-		    MsgBox "This example is for macOS only"
+		    MessageBox "This example is for macOS only"
 		  #EndIf
 		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag Events lstRolesMask
 	#tag Event
-		Sub Open()
-		  Me.DeleteAllRows
+		Sub Opening()
+		  Me.RemoveAllRows
 		  
 		  Me.AddRow("LSRolesNone")
-		  Me.RowTag(0) = CType(LSRolesMask.LSRolesNone, UInteger)
+		  Me.RowTagAt(0) = CType(LSRolesMask.LSRolesNone, UInteger)
 		  
 		  Me.AddRow("LSRolesViewer")
-		  Me.RowTag(1) = CType(LSRolesMask.LSRolesViewer, UInteger)
+		  Me.RowTagAt(1) = CType(LSRolesMask.LSRolesViewer, UInteger)
 		  
 		  Me.AddRow("LSRolesEditor")
-		  Me.RowTag(2) = CType(LSRolesMask.LSRolesEditor, UInteger)
+		  Me.RowTagAt(2) = CType(LSRolesMask.LSRolesEditor, UInteger)
 		  
 		  Me.AddRow("LSRolesShell")
-		  Me.RowTag(3) = CType(LSRolesMask.LSRolesShell, UInteger)
+		  Me.RowTagAt(3) = CType(LSRolesMask.LSRolesShell, UInteger)
 		  
 		  Me.AddRow("LSRolesAll")
-		  Me.RowTag(4) = CType(LSRolesMask.LSRolesAll, UInteger)
+		  Me.RowTagAt(4) = CType(LSRolesMask.LSRolesAll, UInteger)
 		  
-		  me.AddRow("-")
-		  me.RowTag(5) = CType(LSRolesMask.LSRolesNone, UInteger)
+		  Me.AddRow("-")
+		  Me.RowTagAt(5) = CType(LSRolesMask.LSRolesNone, UInteger)
 		  
-		  me.AddRow("LSRolesViewer | LSRolesEditor")
-		  me.RowTag(6) = Bitwise.BitOr(CType(LSRolesMask.LSRolesViewer, UInteger), CType(LSRolesMask.LSRolesEditor, UInteger))
+		  Me.AddRow("LSRolesViewer | LSRolesEditor")
+		  Me.RowTagAt(6) = Bitwise.BitOr(CType(LSRolesMask.LSRolesViewer, UInteger), CType(LSRolesMask.LSRolesEditor, UInteger))
 		  
-		  Me.ListIndex = Me.ListCount-1
+		  Me.SelectedRowIndex = Me.RowCount-1
 		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag Events btnAppURLs
 	#tag Event
-		Sub Action()
-		  lstResults.DeleteAllRows
+		Sub Pressed()
+		  lstResults.RemoveAllRows
 		  
 		  #If TargetMacOS Then
 		    
-		    Dim oResults() As FolderItem = GetApplicationsForURL(Trim(edtURL.Text), CType(lstRolesMask.RowTag(lstRolesMask.ListIndex), UInteger))
+		    Var oResults() As FolderItem = GetApplicationsForURL(edtURL.Text.Trim, CType(lstRolesMask.RowTagAt(lstRolesMask.SelectedRowIndex), UInteger))
 		    
 		    Self.AddResults(oResults)
 		    
 		    
 		  #Else
-		    MsgBox "This example is for macOS only"
+		    MessageBox "This example is for macOS only"
 		  #EndIf
 		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag Events cnvAppIcon
 	#tag Event
-		Sub Paint(g As Graphics, areas() As REALbasic.Rect)
+		Sub Paint(g As Graphics, areas() As Rect)
+		  #Pragma unused areas
+		  
 		  g.DrawPicture(AppIcon_64, 0, 0)
 		End Sub
 	#tag EndEvent
 	#tag Event
-		Sub MouseUp(X As Integer, Y As Integer)
-		  if (x >= 0) and (x < me.Width) and (y > 0) and (y < me.Height) then
-		    ShowURL("https://www.jo-tools.ch/xojo/app-directories/")
-		  end if
+		Sub MouseUp(x As Integer, y As Integer)
+		  If (x >= 0) And (x < Me.Width) And (y > 0) And (y < Me.Height) Then
+		    System.GotoURL("https://www.jo-tools.ch/xojo/app-directories/")
+		  End If
 		End Sub
 	#tag EndEvent
 	#tag Event
-		Function MouseDown(X As Integer, Y As Integer) As Boolean
-		  return true
+		Function MouseDown(x As Integer, y As Integer) As Boolean
+		  #Pragma unused x
+		  #Pragma unused y
+		  
+		  Return True
 		End Function
 	#tag EndEvent
 	#tag Event
 		Sub MouseExit()
-		  me.MouseCursor = nil
+		  Me.MouseCursor = Nil
 		  
 		End Sub
 	#tag EndEvent
 	#tag Event
 		Sub MouseEnter()
-		  me.MouseCursor = System.Cursors.FingerPointer
+		  Me.MouseCursor = System.Cursors.FingerPointer
 		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag Events labAppName1
 	#tag Event
-		Sub Open()
-		  me.Text = "macOS App Directories"
-		  me.TextSize = 18
-		  me.Bold = true
+		Sub Opening()
+		  Me.Text = "macOS App Directories"
+		  Me.FontSize = 18
+		  Me.Bold = True
 		End Sub
 	#tag EndEvent
 	#tag Event
-		Sub MouseUp(X As Integer, Y As Integer)
-		  if (x >= 0) and (x < me.Width) and (y > 0) and (y < me.Height) then
-		    ShowURL("https://www.jo-tools.ch/xojo/app-directories/")
-		  end if
+		Sub MouseUp(x As Integer, y As Integer)
+		  If (x >= 0) And (x < Me.Width) And (y > 0) And (y < Me.Height) Then
+		    System.GotoURL("https://www.jo-tools.ch/xojo/app-directories/")
+		  End If
 		End Sub
 	#tag EndEvent
 	#tag Event
-		Function MouseDown(X As Integer, Y As Integer) As Boolean
-		  return true
+		Function MouseDown(x As Integer, y As Integer) As Boolean
+		  #Pragma unused x
+		  #Pragma unused y
+		  
+		  Return True
 		End Function
 	#tag EndEvent
 	#tag Event
 		Sub MouseExit()
-		  me.MouseCursor = nil
+		  Me.MouseCursor = Nil
 		  
 		End Sub
 	#tag EndEvent
 	#tag Event
 		Sub MouseEnter()
-		  me.MouseCursor = System.Cursors.FingerPointer
+		  Me.MouseCursor = System.Cursors.FingerPointer
 		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag Events labAppVersion
 	#tag Event
-		Sub Open()
-		  if (App.ShortVersion <> "") then
-		    me.Text = App.ShortVersion
-		    return
-		  end if
+		Sub Opening()
+		  If (App.Version <> "") Then
+		    Me.Text = App.Version
+		    Return
+		  End If
 		  
-		  me.Text = Str(App.MajorVersion) + "." + Str(App.MinorVersion) + "." + Str(App.BugVersion)
+		  Me.Text = Str(App.MajorVersion) + "." + Str(App.MinorVersion) + "." + Str(App.BugVersion)
 		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag Events labContact
 	#tag Event
 		Sub MouseExit()
-		  me.MouseCursor = nil
+		  Me.MouseCursor = Nil
 		  
 		End Sub
 	#tag EndEvent
 	#tag Event
 		Sub MouseEnter()
-		  me.MouseCursor = System.Cursors.FingerPointer
+		  Me.MouseCursor = System.Cursors.FingerPointer
 		End Sub
 	#tag EndEvent
 	#tag Event
-		Function MouseDown(X As Integer, Y As Integer) As Boolean
-		  return true
+		Function MouseDown(x As Integer, y As Integer) As Boolean
+		  #Pragma unused x
+		  #Pragma unused y
+		  
+		  Return True
 		End Function
 	#tag EndEvent
 	#tag Event
-		Sub MouseUp(X As Integer, Y As Integer)
-		  if (x >= 0) and (x < me.Width) and (y > 0) and (y < me.Height) then
-		    ShowURL("mailto:xojo@jo-tools.ch")
-		  end if
+		Sub MouseUp(x As Integer, y As Integer)
+		  If (x >= 0) And (x < Me.Width) And (y > 0) And (y < Me.Height) Then
+		    System.GotoURL("mailto:xojo@jo-tools.ch")
+		  End If
 		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag Events cnvPayPal
 	#tag Event
-		Sub Paint(g As Graphics, areas() As REALbasic.Rect)
-		  g.ForeColor = &cFFFFFF
-		  #if (XojoVersion >= 2018.03) then
-		    if IsDarkMode then g.ForeColor = &cD0D0D0
-		  #endif
-		  g.FillRect(0, 0, g.Width, g.Height)
-		  g.ForeColor = &c909090
-		  g.DrawRect(0, 0, g.Width, g.Height)
+		Sub Paint(g As Graphics, areas() As Rect)
+		  #Pragma unused areas
+		  
+		  g.DrawingColor = &cFFFFFF
+		  If Color.IsDarkMode Then g.DrawingColor = &cD0D0D0
+		  g.FillRectangle(0, 0, g.Width, g.Height)
+		  g.DrawingColor = &c909090
+		  g.DrawRectangle(0, 0, g.Width, g.Height)
 		  g.DrawPicture(PayPal, 3, 2, 100, 26, 0, 0, PayPal.Width, PayPal.Height)
 		End Sub
 	#tag EndEvent
 	#tag Event
 		Sub MouseExit()
-		  me.MouseCursor = nil
+		  Me.MouseCursor = Nil
 		  
 		End Sub
 	#tag EndEvent
 	#tag Event
 		Sub MouseEnter()
-		  me.MouseCursor = System.Cursors.FingerPointer
+		  Me.MouseCursor = System.Cursors.FingerPointer
 		End Sub
 	#tag EndEvent
 	#tag Event
-		Sub MouseUp(X As Integer, Y As Integer)
-		  if (x >= 0) and (x < me.Width) and (y > 0) and (y < me.Height) then
-		    ShowURL("https://paypal.me/jotools")
-		  end if
+		Sub MouseUp(x As Integer, y As Integer)
+		  If (x >= 0) And (x < Me.Width) And (y > 0) And (y < Me.Height) Then
+		    System.GotoURL("https://paypal.me/jotools")
+		  End If
 		End Sub
 	#tag EndEvent
 	#tag Event
-		Function MouseDown(X As Integer, Y As Integer) As Boolean
-		  return true
+		Function MouseDown(x As Integer, y As Integer) As Boolean
+		  #Pragma unused x
+		  #Pragma unused y
+		  
+		  Return True
 		End Function
 	#tag EndEvent
 #tag EndEvents
 #tag Events edtBundleID
 	#tag Event
-		Sub Open()
-		  me.DeleteAllRows
+		Sub Opening()
+		  Me.RemoveAllRows
 		  
-		  me.AddRow "com.apple.terminal"
-		  me.AddRow "com.apple.mail"
-		  me.AddRow "com.apple.dt.Xcode"
-		  me.AddRow "com.xojo.xojo"
+		  Me.AddRow "com.apple.terminal"
+		  Me.AddRow "com.apple.mail"
+		  Me.AddRow "com.apple.dt.Xcode"
+		  Me.AddRow "com.xojo.xojo"
 		  
-		  me.Text = "com.apple.terminal"
+		  Me.Text = "com.apple.terminal"
 		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag ViewBehavior
 	#tag ViewProperty
-		Name="Name"
-		Visible=true
-		Group="ID"
-		Type="String"
-		EditorType="String"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="Interfaces"
-		Visible=true
-		Group="ID"
-		Type="String"
-		EditorType="String"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="Super"
-		Visible=true
-		Group="ID"
-		Type="String"
-		EditorType="String"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="Width"
-		Visible=true
-		Group="Size"
-		InitialValue="600"
-		Type="Integer"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="Height"
-		Visible=true
-		Group="Size"
-		InitialValue="400"
-		Type="Integer"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="MinWidth"
+		Name="MinimumWidth"
 		Visible=true
 		Group="Size"
 		InitialValue="64"
 		Type="Integer"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
-		Name="MinHeight"
+		Name="MinimumHeight"
 		Visible=true
 		Group="Size"
 		InitialValue="64"
 		Type="Integer"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
-		Name="MaxWidth"
+		Name="MaximumWidth"
 		Visible=true
 		Group="Size"
 		InitialValue="32000"
 		Type="Integer"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
-		Name="MaxHeight"
+		Name="MaximumHeight"
 		Visible=true
 		Group="Size"
 		InitialValue="32000"
 		Type="Integer"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
-		Name="Frame"
+		Name="Type"
 		Visible=true
 		Group="Frame"
 		InitialValue="0"
-		Type="Integer"
+		Type="Types"
 		EditorType="Enum"
 		#tag EnumValues
 			"0 - Document"
@@ -1502,83 +1481,47 @@ End
 			"6 - Rounded Window"
 			"7 - Global Floating Window"
 			"8 - Sheet Window"
-			"9 - Metal Window"
-			"11 - Modeless Dialog"
+			"9 - Modeless Dialog"
 		#tag EndEnumValues
 	#tag EndViewProperty
 	#tag ViewProperty
-		Name="Title"
-		Visible=true
-		Group="Frame"
-		InitialValue="Untitled"
-		Type="String"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="CloseButton"
+		Name="HasCloseButton"
 		Visible=true
 		Group="Frame"
 		InitialValue="True"
 		Type="Boolean"
-		EditorType="Boolean"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
-		Name="Resizeable"
+		Name="HasMaximizeButton"
 		Visible=true
 		Group="Frame"
 		InitialValue="True"
 		Type="Boolean"
-		EditorType="Boolean"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
-		Name="MaximizeButton"
+		Name="HasMinimizeButton"
 		Visible=true
 		Group="Frame"
 		InitialValue="True"
 		Type="Boolean"
-		EditorType="Boolean"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
-		Name="MinimizeButton"
-		Visible=true
-		Group="Frame"
-		InitialValue="True"
-		Type="Boolean"
-		EditorType="Boolean"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="FullScreenButton"
+		Name="HasFullScreenButton"
 		Visible=true
 		Group="Frame"
 		InitialValue="False"
 		Type="Boolean"
-		EditorType="Boolean"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
-		Name="Composite"
-		Group="OS X (Carbon)"
-		InitialValue="False"
-		Type="Boolean"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="MacProcID"
-		Group="OS X (Carbon)"
-		InitialValue="0"
-		Type="Integer"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="ImplicitInstance"
-		Visible=true
-		Group="Behavior"
-		InitialValue="True"
-		Type="Boolean"
-		EditorType="Boolean"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="Placement"
+		Name="DefaultLocation"
 		Visible=true
 		Group="Behavior"
 		InitialValue="0"
-		Type="Integer"
+		Type="Locations"
 		EditorType="Enum"
 		#tag EnumValues
 			"0 - Default"
@@ -1589,54 +1532,132 @@ End
 		#tag EndEnumValues
 	#tag EndViewProperty
 	#tag ViewProperty
+		Name="HasBackgroundColor"
+		Visible=true
+		Group="Background"
+		InitialValue="False"
+		Type="Boolean"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="BackgroundColor"
+		Visible=true
+		Group="Background"
+		InitialValue="&hFFFFFF"
+		Type="ColorGroup"
+		EditorType="ColorGroup"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Name"
+		Visible=true
+		Group="ID"
+		InitialValue=""
+		Type="String"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Interfaces"
+		Visible=true
+		Group="ID"
+		InitialValue=""
+		Type="String"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Super"
+		Visible=true
+		Group="ID"
+		InitialValue=""
+		Type="String"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Width"
+		Visible=true
+		Group="Size"
+		InitialValue="600"
+		Type="Integer"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Height"
+		Visible=true
+		Group="Size"
+		InitialValue="400"
+		Type="Integer"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Title"
+		Visible=true
+		Group="Frame"
+		InitialValue="Untitled"
+		Type="String"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Resizeable"
+		Visible=true
+		Group="Frame"
+		InitialValue="True"
+		Type="Boolean"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Composite"
+		Visible=false
+		Group="OS X (Carbon)"
+		InitialValue="False"
+		Type="Boolean"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="MacProcID"
+		Visible=false
+		Group="OS X (Carbon)"
+		InitialValue="0"
+		Type="Integer"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="ImplicitInstance"
+		Visible=true
+		Group="Behavior"
+		InitialValue="True"
+		Type="Boolean"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
 		Name="Visible"
 		Visible=true
 		Group="Behavior"
 		InitialValue="True"
 		Type="Boolean"
-		EditorType="Boolean"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="LiveResize"
-		Group="Behavior"
-		InitialValue="True"
-		Type="Boolean"
-		EditorType="Boolean"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
 		Name="FullScreen"
+		Visible=false
 		Group="Behavior"
 		InitialValue="False"
 		Type="Boolean"
-		EditorType="Boolean"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="HasBackColor"
-		Visible=true
-		Group="Background"
-		InitialValue="False"
-		Type="Boolean"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="BackColor"
-		Visible=true
-		Group="Background"
-		InitialValue="&hFFFFFF"
-		Type="Color"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
 		Name="Backdrop"
 		Visible=true
 		Group="Background"
+		InitialValue=""
 		Type="Picture"
-		EditorType="Picture"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
 		Name="MenuBar"
 		Visible=true
 		Group="Menus"
-		Type="MenuBar"
-		EditorType="MenuBar"
+		InitialValue=""
+		Type="DesktopMenuBar"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
 		Name="MenuBarVisible"
@@ -1644,6 +1665,6 @@ End
 		Group="Deprecated"
 		InitialValue="True"
 		Type="Boolean"
-		EditorType="Boolean"
+		EditorType=""
 	#tag EndViewProperty
 #tag EndViewBehavior
