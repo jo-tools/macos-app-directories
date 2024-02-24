@@ -6,7 +6,7 @@ Xojo example project
 ## Description
 An example Xojo project to show how to deal with application directories on macOS. Why that?
 
-macOS Catalina consists of two Volumes:
+macOS Catalina *(and newer)* consists of two Volumes:
 1. a read-only System volume
 2. a read-write Data volume
 
@@ -14,12 +14,12 @@ So the classic ```/Applications``` directory is now the one where users can stor
 Finder transparently shows them just as ```Applications```. However, Developers might need to get the correct native path. But Xojo only provides a single folder using ```SpecialFolder.Applications```...
 
 The included examples show how to:
-- find Applications
+- Find Applications
   - by BundleID *(the preferred way)*
   - by AppName *(this will try to find it in all possible system defined application directories)*
-- get an Array of standard/default Folders defined by Apple *(see the Enumeration:* [```NSSearchPathDirectory```](https://developer.apple.com/documentation/foundation/nssearchpathdirectory?language=objc)*)*.
+- Get an Array of standard/default Folders defined by Apple *(see the Enumeration:* [```NSSearchPathDirectory```](https://developer.apple.com/documentation/foundation/nssearchpathdirectory?language=objc)*)*.
   - This way you will get all ones *(also the per-user Application Folder, if it exists)* from the OS.
-- get an answer to the following questions:
+- Get an answer to the following questions:
   - Which available application(s) can open a Document?  
     An example is included which will ask you to select a Document. It then locates all suitable Applications, depending on the [```LSRolesMask```](https://developer.apple.com/documentation/coreservices/lsrolesmask?language=objc)(s) you specify.
 - Which available application(s) can deal with a given URL?
@@ -34,8 +34,8 @@ Example application: macOS App Directories
 [Xojo](https://www.xojo.com/) is a rapid application development for Desktop, Web, Mobile & Raspberry Pi.  
 
 The Desktop application Xojo example project ```macOS-App-Directories.xojo_project``` is using:
-- Xojo 2018r4
-- API 1
+- Xojo 2023r4
+- API 2
 
 ### How to use in your own Xojo project?
 1. Copy the Module ```modMacOSAppDirectories``` from the example project, and paste it into your project.
