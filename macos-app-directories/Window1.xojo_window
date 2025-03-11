@@ -3,7 +3,7 @@ Begin DesktopWindow Window1
    Backdrop        =   0
    BackgroundColor =   &cFFFFFF00
    Composite       =   False
-   DefaultLocation =   0
+   DefaultLocation =   2
    FullScreen      =   False
    HasBackgroundColor=   False
    HasCloseButton  =   True
@@ -735,13 +735,13 @@ Begin DesktopWindow Window1
       TabIndex        =   2
       TabPanelIndex   =   0
       TabStop         =   True
-      Tooltip         =   ""
+      Tooltip         =   "#kURL_Repository"
       Top             =   24
       Transparent     =   True
       Visible         =   True
       Width           =   64
    End
-   Begin DesktopLabel labAppName1
+   Begin DesktopLabel labAppTitle
       AllowAutoDeactivate=   True
       Bold            =   True
       Enabled         =   True
@@ -767,7 +767,7 @@ Begin DesktopWindow Window1
       Text            =   "macOS App Directories"
       TextAlignment   =   0
       TextColor       =   &c0072D800
-      Tooltip         =   ""
+      Tooltip         =   "#kURL_Repository"
       Top             =   20
       Transparent     =   True
       Underline       =   True
@@ -866,7 +866,7 @@ Begin DesktopWindow Window1
       Text            =   "Contact"
       TextAlignment   =   0
       TextColor       =   &c0072CE00
-      Tooltip         =   ""
+      Tooltip         =   "#kEmail_Contact"
       Top             =   54
       Transparent     =   True
       Underline       =   True
@@ -893,7 +893,7 @@ Begin DesktopWindow Window1
       TabIndex        =   5
       TabPanelIndex   =   0
       TabStop         =   True
-      Tooltip         =   ""
+      Tooltip         =   "#kURL_PayPal"
       Top             =   54
       Transparent     =   True
       Visible         =   True
@@ -967,12 +967,6 @@ End
 		Sub Opening()
 		  Self.Title = "macOS - App Directories  -  v" + Str(App.MajorVersion) + "." + Str(App.MinorVersion) + "." + Str(App.BugVersion)
 		  
-		  #If TargetMacOS Then
-		    Var rect As Xojo.Rect = Self.Bounds
-		    rect.Top = DesktopDisplay.DisplayAt(0).AvailableTop
-		    Self.Bounds = rect
-		  #EndIf
-		  
 		End Sub
 	#tag EndEvent
 
@@ -1003,6 +997,15 @@ End
 
 
 	#tag Constant, Name = constNoResults, Type = String, Dynamic = False, Default = \"--- no results ---", Scope = Private
+	#tag EndConstant
+
+	#tag Constant, Name = kEmail_Contact, Type = String, Dynamic = False, Default = \"xojo@jo-tools.ch", Scope = Private
+	#tag EndConstant
+
+	#tag Constant, Name = kURL_PayPal, Type = String, Dynamic = False, Default = \"https://paypal.me/jotools", Scope = Private
+	#tag EndConstant
+
+	#tag Constant, Name = kURL_Repository, Type = String, Dynamic = False, Default = \"https://github.com/jo-tools/macos-app-directories", Scope = Private
 	#tag EndConstant
 
 
@@ -1278,7 +1281,7 @@ End
 	#tag Event
 		Sub MouseUp(x As Integer, y As Integer)
 		  If (x >= 0) And (x < Me.Width) And (y > 0) And (y < Me.Height) Then
-		    System.GotoURL("https://www.jo-tools.ch/xojo/app-directories/")
+		    System.GotoURL(kURL_Repository)
 		  End If
 		End Sub
 	#tag EndEvent
@@ -1302,7 +1305,7 @@ End
 		End Sub
 	#tag EndEvent
 #tag EndEvents
-#tag Events labAppName1
+#tag Events labAppTitle
 	#tag Event
 		Sub Opening()
 		  Me.Text = "macOS App Directories"
@@ -1313,7 +1316,7 @@ End
 	#tag Event
 		Sub MouseUp(x As Integer, y As Integer)
 		  If (x >= 0) And (x < Me.Width) And (y > 0) And (y < Me.Height) Then
-		    System.GotoURL("https://www.jo-tools.ch/xojo/app-directories/")
+		    System.GotoURL(kURL_Repository)
 		  End If
 		End Sub
 	#tag EndEvent
@@ -1372,7 +1375,7 @@ End
 	#tag Event
 		Sub MouseUp(x As Integer, y As Integer)
 		  If (x >= 0) And (x < Me.Width) And (y > 0) And (y < Me.Height) Then
-		    System.GotoURL("mailto:xojo@jo-tools.ch")
+		    System.GotoURL("mailto:" + kEmail_Contact)
 		  End If
 		End Sub
 	#tag EndEvent
@@ -1404,7 +1407,7 @@ End
 	#tag Event
 		Sub MouseUp(x As Integer, y As Integer)
 		  If (x >= 0) And (x < Me.Width) And (y > 0) And (y < Me.Height) Then
-		    System.GotoURL("https://paypal.me/jotools")
+		    System.GotoURL(kURL_PayPal)
 		  End If
 		End Sub
 	#tag EndEvent
